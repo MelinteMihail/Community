@@ -1,37 +1,54 @@
 {
     "2025": {
-        "primul": {
-            "nume": "Echipa Intai",
-            "text": "lorem",
-            "pdf": ""
+        "first": {
+            "name": "Echipa Intai",
+            "text": "lorem1",
+            "elevi": ["Aad Elias", "Melinte Mihail"],
+            "profesori": ["Serban Iuliana"],
+            "scoala": "CNCV",
+            "link": ""
+        },
+        "second": {
+            "name": "Echipa Doi",
+            "text": "lorem2",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
+        },
+        "third": {
+            "name": "Echipa Trei",
+            "text": "lorem3",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         }
     },
     "2024": {
-        "primul": {
-            "nume": "Echipa Doi",
+        "first": {
+            "name": "Echipa Intai",
+            "text": "",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
+        },
+        "second": {
+            "name": "Echipa Doi",
             "text": "lorem2",
-            "pdf": ""
-        }
-    },
-    "2023": {
-        "primul": {
-            "nume": "Echipa Trei",
-            "text": "lorem3",
-            "pdf": ""
-        }
-    },
-    "2022": {
-        "primul": {
-            "nume": "Echipa Patru",
-            "text": "lorem4",
-            "pdf": ""
-        }
-    },
-    "2021": {
-        "primul": {
-            "nume": "Echipa Cinci",
-            "text": "lorem5",
-            "pdf": ""
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
+        },
+        "third": {
+            "name": "Echipa Trei",
+            "text": "lorem2",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         }
     }
 }
