@@ -271,3 +271,16 @@ main .calendar .event-cards .card p:first-child {
     transform: rotate(-45deg);
 }
 
+
+footer {
+    background: black;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 2rem;
+    margin-top: 2rem;
+    
+    text-align: center;
+}

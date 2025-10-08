@@ -1,0 +1,37 @@
+{
+    "2025": {
+        "primul": {
+            "nume": "Echipa Intai",
+            "text": "lorem",
+            "pdf": ""
+        }
+    },
+    "2024": {
+        "primul": {
+            "nume": "Echipa Doi",
+            "text": "lorem2",
+            "pdf": ""
+        }
+    },
+    "2023": {
+        "primul": {
+            "nume": "Echipa Trei",
+            "text": "lorem3",
+            "pdf": ""
+        }
+    },
+    "2022": {
+        "primul": {
+            "nume": "Echipa Patru",
+            "text": "lorem4",
+            "pdf": ""
+        }
+    },
+    "2021": {
+        "primul": {
+            "nume": "Echipa Cinci",
+            "text": "lorem5",
+            "pdf": ""
+        }
+    }
+}
