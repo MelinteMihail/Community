@@ -15,135 +15,169 @@ let savedData;
 let selectedTeam = 1;
 
 window.addEventListener("load", readDataFile);
-secondTab.addEventListener('transitionend', () => updateYear());
-
-for (const podium of podiumParent.querySelectorAll('.podium')) {
+secondTab.addEventListener('transitionend', updateYear);
+buttonRight.addEventListener("click", () => changeYear(1));
+buttonLeft.addEventListener("click", () => changeYear(-1));
+    
+podiumParent.querySelectorAll('.podium').forEach(podium => {
     const name = podium.querySelector('.name');
     podium.addEventListener('transitionend', () => {
         name.classList.add('active');
         name.style.transition = "opacity 0.25s ease-in-out";
-    }); 
-}
+
+        if (![...podiumParent.querySelectorAll('.podium')].some(p => p.classList.contains('selected'))) {
+            handlePodiumClick(podiumParent.querySelector('.first'));
+        }
+    });
+    podium.addEventListener('click', () => handlePodiumClick(podium));
+});
 
 function readDataFile() {
     fetch("data/data.json")
-        .then((response) => {
-            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            return response.json();
-        })
+        .then(res => res.ok ? res.json() : Promise.reject(`HTTP ${res.status}`))
         .then(handleData)
-        .catch((error) => console.error("Fetch error:", error));
+        .catch(err => console.error("Fetch error:", err));
 }
 
 function handleData(data) {
     yearArray = Object.keys(data);
     savedData = data;
     currentYear = yearArray.length - 1;
-    buttonLeft.disabled = true;
-    buttonRight.disabled = true;
+    updateNavigationButtons();
     updateYear();
 }
 
-buttonRight.addEventListener("click", () => {
-    if (currentYear >= yearArray.length - 1) return;
-    currentYear++;
-    changeTab("right");
-});
+function changeYear(direction) {
+    const newYear = currentYear + direction;
+    if (newYear < 0 || newYear >= yearArray.length) return;
+    currentYear = newYear;
+    changeTab(direction > 0 ? "right" : "left");
+}
 
-buttonLeft.addEventListener("click", () => {
-    if (currentYear <= 0) return;
-    currentYear--;
-    changeTab("left");
-});
+function updateNavigationButtons() {
+    buttonLeft.disabled = currentYear <= 0;
+    buttonRight.disabled = currentYear >= yearArray.length - 1;
+}
 
 function changeTab(direction) {
     const xTranslate = direction === "right" ? 100 : -100;
-
     updateTab(secondTab);
+
     secondTab.style.transition = "none";
     secondTab.style.transform = `translateX(${xTranslate}%)`;
-
     secondTab.offsetHeight;
 
     secondTab.style.transition = "transform 0.6s ease";
     secondTab.style.transform = "translateX(0)";
-
-    buttonLeft.disabled = true;
-    buttonRight.disabled = true;
-
     tab.style.transition = "transform 0.6s ease";
     tab.style.transform = `translateX(${-xTranslate}%)`;
+    
+    tab.querySelectorAll('.info > *').forEach(el => {
+        el.classList.remove('visible');
+    });
 
-    for (const name of podiumParent.querySelectorAll('name')) {
-        name.classList.remove('active');
+    updateNavigationButtons();
+}
+
+function resetPodiumsVisual() {
+    podiumParent.querySelectorAll('.podium').forEach(podium => {
+        podium.classList.remove('active', 'selected', 'dimmed');
+        const name = podium.querySelector('.name');
+        name?.classList.remove('active');
         name.style.transition = "none";
-    }
+    });
 }
 
 function updateYear() {
     resetTabPositions();
+    deselectAllPodiums();
 
     const yearKey = yearArray[currentYear];
     title.textContent = yearKey;
+    updateNavigationButtons();
 
-    if (currentYear < yearArray.length - 1)
-        buttonRight.disabled = false;
-
-    if (currentYear > 0)
-        buttonLeft.disabled = false;
-
-    for (const podium of podiumParent.querySelectorAll('.podium')) {
+    podiumParent.querySelectorAll('.podium').forEach((podium, i) => {
         podium.classList.remove('active');
         podium.style.transition = "none";
-
         void podium.offsetWidth;
 
-        podium.style.transition = "height 0.6s cubic-bezier(0, 0.55, 0.45, 1)";
-        podium.classList.add('active');
-    }
-
-    const podiums = podiumParent.querySelectorAll('.podium');
-
-    podiums.forEach((podium, i) => {
-        podium.classList.remove('active');
-        podium.style.transition = "none";
-        podium.offsetWidth;
         const name = podium.querySelector('.name');
-        name.classList.remove('active');
+        name?.classList.remove('active');
         name.style.transition = "none";
-        
-        i++;
-        const delay = i * 0.1 * (i % 2);
-        podium.style.transition = `height 0.6s ${delay}s cubic-bezier(0, 0.55, 0.45, 1)`;
+
+        const delay = (i + 1) * 0.1 * ((i + 1) % 2);
+        podium.style.transition = `height 0.6s ${delay}s cubic-bezier(0, 0.55, 0.45, 1), opacity 0.5s ease`;
         podium.classList.add('active');
     });
+
 
     updateTab(tab);
 }
 
 function updateTab(selectedTab) {
     const yearKey = yearArray[currentYear];
-    const h1Content = selectedTab.querySelector('.text');
-    const first = selectedTab.querySelector('.first').querySelector('.name');
-    const second = selectedTab.querySelector('.second').querySelector('.name');
-    const third = selectedTab.querySelector('.third').querySelector('.name');
+    const data = savedData[yearKey];
 
-    h1Content.textContent = savedData[yearKey]["first"]["text"];
-    first.textContent = savedData[yearKey]["first"]["name"];
-    second.textContent = savedData[yearKey]["second"]["name"];
-    third.textContent = savedData[yearKey]["third"]["name"];
+    selectedTab.querySelector('.text').textContent = data.first.text;
+    selectedTab.querySelector('.first .name').textContent = data.first.name;
+    selectedTab.querySelector('.second .name').textContent = data.second.name;
+    selectedTab.querySelector('.third .name').textContent = data.third.name;
+}
+
+let podiumTransitionInProgress = false;
+
+function handlePodiumClick(clickedPodium) {
+    if (clickedPodium.classList.contains('selected')) return;
+
+    podiumParent.querySelectorAll('.podium').forEach(p => {
+        p.classList.toggle('selected', p === clickedPodium);
+        p.classList.toggle('dimmed', p !== clickedPodium);
+    });
+
+    selectedTeam = clickedPodium.classList.contains('first') ? 1
+                 : clickedPodium.classList.contains('second') ? 2
+                 : 3;
+
+    const infoElements = tab.querySelectorAll('.info > *');
+    const fadeDuration = 300;
+
+    infoElements.forEach(el => el.classList.remove('visible'));
+
+    setTimeout(() => {
+        updateSelectedTeamContent();
+
+        infoElements.forEach(el => el.classList.add('visible'));
+    }, fadeDuration);
+}
+
+function updateSelectedTeamContent() {
+    const posStr = parsePositionNumberToString(selectedTeam);
+    const obj = savedData[yearArray[currentYear]][posStr];
+
+    const eleviText = "Elevi: " + obj.elevi.join(", ") + ".";
+    const profesoriText = "Profesori Coordonatori: " + obj.profesori.join(", ") + ".";
+    const scoalaText = "Școala de Proveniență: " + obj.scoala;
+
+    tab.querySelector('.text').textContent = obj.text;
+    tab.querySelector('.elevi').textContent = eleviText;
+    tab.querySelector('.profesori').textContent = profesoriText;
+    tab.querySelector('.scoala').textContent = scoalaText;
+    tab.querySelector('.link').href = obj.link;
+
+    console.log("Selected team:", selectedTeam);
+}
+
+function deselectAllPodiums() {
+    podiumParent.querySelectorAll('.podium').forEach(podium => podium.classList.remove('selected', 'dimmed'));
 }
 
 function resetTabPositions() {
     secondTab.style.transition = "none";
     secondTab.style.transform = "translateX(100%)";
-
     tab.style.transition = "none";
     tab.style.transform = "translateX(0)";
 }
 
-function selectTeam(team) {
-    selectTeam = team;
-
-    
+function parsePositionNumberToString(num) {
+    return ['none', 'first', 'second', 'third'][num] || 'none';
 }

@@ -2,35 +2,53 @@
     "2025": {
         "first": {
             "name": "Echipa Intai",
-            "text": "lorem",
-            "pdf": ""
+            "text": "lorem1",
+            "elevi": ["Aad Elias", "Melinte Mihail"],
+            "profesori": ["Serban Iuliana"],
+            "scoala": "CNCV",
+            "link": "https://pornhub.com"
         },
         "second": {
             "name": "Echipa Doi",
             "text": "lorem2",
-            "pdf": ""
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         },
         "third": {
             "name": "Echipa Trei",
             "text": "lorem3",
-            "pdf": ""
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         }
     },
     "2024": {
         "first": {
             "name": "Echipa Intai",
-            "text": "lorem",
-            "pdf": ""
+            "text": "Eu sunt Elias si ma descombobulez ca imi bag pula in javascript pentru ca nu-mi place deloc si e un limbaj de cacat imi bag pula text",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         },
         "second": {
             "name": "Echipa Doi",
-            "text": "lorem",
-            "pdf": ""
+            "text": "lorem2",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         },
         "third": {
             "name": "Echipa Trei",
-            "text": "lorem",
-            "pdf": ""
+            "text": "lorem2",
+            "elevi": [],
+            "profesori": [],
+            "scoala": "",
+            "link": ""
         }
     }
 }
