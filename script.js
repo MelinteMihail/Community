@@ -12,9 +12,18 @@ tabWrapper.appendChild(secondTab);
 let yearArray = [];
 let currentYear = 0;
 let savedData;
+let selectedTeam = 1;
 
 window.addEventListener("load", readDataFile);
 secondTab.addEventListener('transitionend', () => updateYear());
+
+for (const podium of podiumParent.querySelectorAll('.podium')) {
+    const name = podium.querySelector('.name');
+    podium.addEventListener('transitionend', () => {
+        name.classList.add('active');
+        name.style.transition = "opacity 0.25s ease-in-out";
+    }); 
+}
 
 function readDataFile() {
     fetch("data/data.json")
@@ -64,11 +73,16 @@ function changeTab(direction) {
 
     tab.style.transition = "transform 0.6s ease";
     tab.style.transform = `translateX(${-xTranslate}%)`;
+
+    for (const name of podiumParent.querySelectorAll('name')) {
+        name.classList.remove('active');
+        name.style.transition = "none";
+    }
 }
 
 function updateYear() {
     resetTabPositions();
-    
+
     const yearKey = yearArray[currentYear];
     title.textContent = yearKey;
 
@@ -78,7 +92,7 @@ function updateYear() {
     if (currentYear > 0)
         buttonLeft.disabled = false;
 
-        for (const podium of podiumParent.querySelectorAll('.podium')) {
+    for (const podium of podiumParent.querySelectorAll('.podium')) {
         podium.classList.remove('active');
         podium.style.transition = "none";
 
@@ -88,16 +102,36 @@ function updateYear() {
         podium.classList.add('active');
     }
 
+    const podiums = podiumParent.querySelectorAll('.podium');
+
+    podiums.forEach((podium, i) => {
+        podium.classList.remove('active');
+        podium.style.transition = "none";
+        podium.offsetWidth;
+        const name = podium.querySelector('.name');
+        name.classList.remove('active');
+        name.style.transition = "none";
+        
+        i++;
+        const delay = i * 0.1 * (i % 2);
+        podium.style.transition = `height 0.6s ${delay}s cubic-bezier(0, 0.55, 0.45, 1)`;
+        podium.classList.add('active');
+    });
+
     updateTab(tab);
 }
 
 function updateTab(selectedTab) {
     const yearKey = yearArray[currentYear];
     const h1Content = selectedTab.querySelector('.text');
-    const first = selectedTab.querySelector('.first');
+    const first = selectedTab.querySelector('.first').querySelector('.name');
+    const second = selectedTab.querySelector('.second').querySelector('.name');
+    const third = selectedTab.querySelector('.third').querySelector('.name');
 
-    h1Content.textContent = savedData[yearKey]["primul"]["text"];
-    first.textContent = savedData[yearKey]["primul"]["nume"];
+    h1Content.textContent = savedData[yearKey]["first"]["text"];
+    first.textContent = savedData[yearKey]["first"]["name"];
+    second.textContent = savedData[yearKey]["second"]["name"];
+    third.textContent = savedData[yearKey]["third"]["name"];
 }
 
 function resetTabPositions() {
@@ -106,4 +140,10 @@ function resetTabPositions() {
 
     tab.style.transition = "none";
     tab.style.transform = "translateX(0)";
+}
+
+function selectTeam(team) {
+    selectTeam = team;
+
+    
 }
