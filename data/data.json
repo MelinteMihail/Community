@@ -1,16 +1,14 @@
 {
     "2025": {
         "first": {
-            "name": "Echipa Intai",
-            "text": "lorem1",
+            "name": "Jobee",
             "elevi": ["Aad Elias", "Melinte Mihail"],
             "profesori": ["Serban Iuliana"],
             "scoala": "CNCV",
-            "link": ""
+            "link": "https://www.youtube.com/"
         },
         "second": {
-            "name": "Echipa Doi",
-            "text": "lorem2",
+            "name": "mata",
             "elevi": [],
             "profesori": [],
             "scoala": "",
@@ -18,7 +16,6 @@
         },
         "third": {
             "name": "Echipa Trei",
-            "text": "lorem3",
             "elevi": [],
             "profesori": [],
             "scoala": "",
@@ -28,7 +25,6 @@
     "2024": {
         "first": {
             "name": "Echipa Intai",
-            "text": "",
             "elevi": [],
             "profesori": [],
             "scoala": "",
@@ -36,7 +32,6 @@
         },
         "second": {
             "name": "Echipa Doi",
-            "text": "lorem2",
             "elevi": [],
             "profesori": [],
             "scoala": "",
@@ -44,7 +39,6 @@
         },
         "third": {
             "name": "Echipa Trei",
-            "text": "lorem2",
             "elevi": [],
             "profesori": [],
             "scoala": "",

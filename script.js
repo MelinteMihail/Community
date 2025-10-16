@@ -73,7 +73,11 @@ function changeTab(direction) {
     tab.style.transform = `translateX(${-xTranslate}%)`;
     
     tab.querySelectorAll('.info > *').forEach(el => {
-        el.classList.remove('visible');
+
+        if(el == ".link-wrapper")
+            el.querySelector(".link").classList.remove("visible");
+        else
+            el.classList.remove('visible');
     });
 
     updateNavigationButtons();
@@ -154,15 +158,15 @@ function updateSelectedTeamContent() {
     const posStr = parsePositionNumberToString(selectedTeam);
     const obj = savedData[yearArray[currentYear]][posStr];
 
-    const eleviText = "Elevi: " + obj.elevi.join(", ") + ".";
-    const profesoriText = "Profesori Coordonatori: " + obj.profesori.join(", ") + ".";
-    const scoalaText = "Școala de Proveniență: " + obj.scoala;
-
-    tab.querySelector('.text').textContent = obj.text;
+    const eleviText = "Elevi: " + obj.elevi.join(", ");
+    const profesoriText = "Profesori Coordonatori: " + obj.profesori.join(", ");
+    const scoalaText = "Scoala de Provenienta: " + obj.scoala;
+    
+    tab.querySelector('.text').textContent = obj.name;
     tab.querySelector('.elevi').textContent = eleviText;
     tab.querySelector('.profesori').textContent = profesoriText;
     tab.querySelector('.scoala').textContent = scoalaText;
-    tab.querySelector('.link').href = obj.link;
+    tab.querySelector('.link-wrapper .link').href = obj.link;
 
     console.log("Selected team:", selectedTeam);
 }

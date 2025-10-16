@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+/* @import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 
 * {
     margin: 0;
@@ -283,4 +283,335 @@ footer {
     margin-top: 2rem;
     
     text-align: center;
+} */
+/* ---------- DESIGN TOKENS ---------- */
+:root {
+  /* 🎨 Colors */
+  --color-primary: rebeccapurple;
+  --color-accent: #00B300;
+  --color-background: #ffffff;
+  --color-surface: #007200;
+  --color-text: #000000;
+  --color-text-light: #333333;
+  --color-border: #e0e0e0;
+  --color-footer-bg: #007200;
+  --color-footer-text: #ffffff;
+
+  /* ✍️ Typography */
+  --font-family-base: "Poppins", sans-serif;
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-md: 1.25rem;    /* 20px */
+  --font-size-lg: 1.5rem;     /* 24px */
+  --font-size-xl: 1.75rem;    /* 28px */
+  --font-size-xxl: 2rem;      /* 32px */
+
+  /* 🧱 Spacing */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem;  /* 8px */
+  --space-md: 1rem;    /* 16px */
+  --space-lg: 1.5rem;  /* 24px */
+  --space-xl: 2rem;    /* 32px */
+  --space-xxl: 5rem;   /* 80px */
+
+  /* 🧩 Borders & Radius */
+  --radius-sm: 4px;
+  --radius-md: 5px;
+  --radius-lg: 10px;
+  --border-width: 1px;
+
+  /* 🌫️ Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* ⚙️ Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+@import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+  line-height: 1.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 200vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+img {
+  width: 10px;
+  height: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  margin-left: var(--space-xl);
+  list-style-type: none;
+  padding: var(--space-sm);
+  border: var(--border-width) solid var(--color-accent);
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+li:last-child {
+  border-bottom-left-radius: var(--radius-lg);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-primary);
+  gap: var(--space-xxl);
+}
+
+.logo {
+  width: max-content;
+  height: max-content;
+  font-size: var(--font-size-md);
+}
+
+.navbar {
+  margin-top: var(--space-xl);
+  padding-inline: var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-md);
+}
+
+.regulament {
+  font-size: var(--font-size-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links > div,
+.regulament {
+  cursor: pointer;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.links > div:hover,
+.regulament:hover {
+  background-color: var(--color-surface);
+}
+
+/* ---------- DROPDOWN ---------- */
+.editii,
+.poze {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.editii img,
+.poze img {
+  transition: all var(--transition-normal);
+}
+
+.dropdown {
+  position: absolute;
+  min-width: 150px;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-background);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-normal);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.dropdown a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text-light);
+  padding: 0.75rem 1rem;
+  transition: background-color var(--transition-fast);
+}
+
+.dropdown a:hover {
+  background-color: var(--color-surface);
+}
+
+.editii:hover img,
+.poze:hover img {
+  rotate: 90deg;
+}
+
+.editii:hover .dropdown,
+.poze:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown a:first-child {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.dropdown a:not(:last-child) {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.dropdown a:last-child {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* ---------- HERO CONTAINER ---------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+  font-size: var(--font-size-xl);
+}
+
+/* ---------- MAIN ---------- */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: var(--space-xl);
+  gap: var(--space-xxl);
+}
+
+/* ABOUT SECTION */
+main .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .about span a {
+  color: revert;
+  text-decoration: revert;
+}
+
+main .about .about-text {
+  width: 30%;
+}
+
+main .about .about-text p {
+  display: inline;
+}
+
+/* TEAM SECTION */
+main .team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+main .team .team-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* CALENDAR SECTION */
+main .calendar,
+main .calendar .event-cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+main .calendar {
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+main .calendar .title {
+  font-size: var(--font-size-lg);
+}
+
+main .calendar .event-cards .card {
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-accent);
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+}
+
+main .calendar .event-cards .card p:first-child {
+  font-weight: 600;
+}
+
+/* ARROW ELEMENT */
+.arrow {
+  position: relative;
+  display: flex;
+  align-self: center;
+  width: 4px;
+  height: 50px;
+  margin: 0 29px;
+  border-radius: 9999px;
+  background-color: var(--color-text);
+}
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: var(--color-text);
+  transform-origin: 50% calc(100% - 2px);
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+}
+
+.arrow::after {
+  transform: rotate(-45deg);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+  text-align: center;
 }
