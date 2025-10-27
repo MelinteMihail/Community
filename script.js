@@ -39,13 +39,28 @@ function readDataFile() {
         .catch(err => console.error("Fetch error:", err));
 }
 
+function getYearFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("year");
+}
+
+
 function handleData(data) {
     yearArray = Object.keys(data);
     savedData = data;
-    currentYear = yearArray.length - 1;
+
+    const urlYear = getYearFromURL();
+
+    if (urlYear && yearArray.includes(urlYear)) {
+        currentYear = yearArray.indexOf(urlYear);
+    } else {
+        currentYear = yearArray.length - 1;
+    }
+
     updateNavigationButtons();
     updateYear();
 }
+
 
 function changeYear(direction) {
     const newYear = currentYear + direction;

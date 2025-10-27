@@ -2,39 +2,39 @@
     "2025": {
         "first": {
             "name": "Jobee",
-            "elevi": ["Aad Elias", "Melinte Mihail"],
-            "profesori": ["Serban Iuliana"],
-            "scoala": "CNCV",
-            "link": "https://www.youtube.com/"
+            "elevi": ["Vlad", "Ilinca", "Diana", "Daria"],
+            "profesori": ["Mihaela Anca"],
+            "scoala": "Colegiul Național “Ion Luca Caragiale” București",
+            "link": "https://docs.google.com/presentation/d/1WzNXOkPjjTgedf3gM92yplYgzNguW9nO/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
         "second": {
-            "name": "mata",
-            "elevi": [],
-            "profesori": [],
-            "scoala": "",
-            "link": ""
+            "name": "KitchenBro",
+            "elevi": ["Dobriță Rareș", "Darie Ioana", "Cioc Matei", "Aad Elias"],
+            "profesori": ["Iuliana Serban"],
+            "scoala": "Colegiul Național Cantemir Vodă",
+            "link": "https://docs.google.com/presentation/d/1aDJyGsFCuQSy_1CqNCX60JE7-7z0A4qN/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
         "third": {
-            "name": "Echipa Trei",
-            "elevi": [],
-            "profesori": [],
-            "scoala": "",
-            "link": ""
+            "name": "Arvaya",
+            "elevi": ["Matei Iulia Teodora", "Nițoiu Mara", "Ștefănescu Diana"],
+            "profesori": ["Popa Simona Mihaela"],
+            "scoala": "Colegiul Național “Gheorghe Lazăr”",
+            "link": "https://docs.google.com/presentation/d/1ORGPwDqcbTTgCmtOScZN5q81lI4EWLTy/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         }
     },
     "2024": {
         "first": {
-            "name": "Echipa Intai",
-            "elevi": [],
-            "profesori": [],
-            "scoala": "",
+            "name": "Assisto",
+            "elevi": ["Plesa Sara", "Soare Mina", "Croitoru Maia"],
+            "profesori": ["Balcă Mihaela"],
+            "scoala": "Colegiul Național “Școala Centrală”",
             "link": ""
         },
         "second": {
-            "name": "Echipa Doi",
-            "elevi": [],
-            "profesori": [],
-            "scoala": "",
+            "name": "Ceasul Social",
+            "elevi": ["Dumitrescu Radu", "Hoang Hai- Yen", "Țiclete Sorin"],
+            "profesori": ["Iuliana Serban"],
+            "scoala": "Colegiul Național Cantemir Vodă",
             "link": ""
         },
         "third": {

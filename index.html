@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CommunIty</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -42,7 +41,7 @@
                     Poze
                     <img src="images/arrow-right.svg" alt="">
                     <div class="dropdown">
-                        <a href="#">Arhiva Foto 2025</a>
+                        <a href="https://drive.google.com/drive/folders/1JO_G8nb_bZeC0XEUvOP70r9-gAH0TnU1?usp=drive_link">Arhiva Foto 2025</a>
                         <a href="#">Arhiva Foto 2026</a>
                         <a href="#">Arhiva Foto 2027</a>
                     </div>
@@ -57,6 +56,8 @@
             <h1>CommunITy</h1>
             <h2>2025</h2>
         </div>
+
+        <div class="header-arrow"></div>
     </header>
 
     <main>
@@ -211,5 +212,17 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const arrow = document.querySelector(".header-arrow");
+
+            if (window.scrollY > 100) {
+                arrow.classList.add("hide");
+            } else {
+                arrow.classList.remove("hide");
+            }
+        });
+    </script>
 </body>
 </html>

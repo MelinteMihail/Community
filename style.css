@@ -382,6 +382,50 @@ header {
   gap: var(--space-xxl);
 }
 
+header .header-arrow {
+  position: absolute;
+  display: inline-block;
+  width: 62px;
+  height: 33px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  animation: fadeIn 3s ease-in-out forwards, bounce 1.2s infinite ease-in-out;
+  transition: opacity 0.5s ease;
+}
+
+header .header-arrow::before,
+header .header-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 45px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  transform-origin: 50% calc(100% - 3px);
+
+}
+
+header .header-arrow::before {
+  transform: rotate(45deg);
+}
+
+header .header-arrow::after {
+  transform: rotate(-45deg);
+} 
+
+header .header-arrow.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+header .header-arrow.hide::before,
+header .header-arrow.hide::after {
+  opacity: 0;
+}
+
 .logo {
   width: max-content;
   height: max-content;
@@ -403,6 +447,11 @@ header {
   font-size: var(--font-size-md);
 }
 
+.links .poze:hover img,
+.links .editii:hover img {
+  filter: invert(1);
+}
+
 .regulament {
   font-size: var(--font-size-md);
   display: flex;
@@ -415,12 +464,12 @@ header {
   cursor: pointer;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
+  transition: color var(--transition-fast);
 }
 
 .links > div:hover,
 .regulament:hover {
-  background-color: var(--color-surface);
+  color: var(--color-background);
 }
 
 /* ---------- DROPDOWN ---------- */
@@ -455,13 +504,14 @@ header {
 .dropdown a {
   display: block;
   text-decoration: none;
-  color: var(--color-text-light);
+  color: #333;
   padding: 0.75rem 1rem;
   transition: background-color var(--transition-fast);
 }
 
 .dropdown a:hover {
-  background-color: var(--color-surface);
+  /* background-color: var(--color-surface); */
+  background-color: #f0f0f0;
 }
 
 .editii:hover img,
@@ -504,7 +554,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: var(--space-xl);
+  margin-block: var(--space-xxl);
   gap: var(--space-xxl);
 }
 
@@ -549,7 +599,7 @@ main .calendar .event-cards {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 main .calendar {
@@ -562,6 +612,7 @@ main .calendar .title {
 }
 
 main .calendar .event-cards .card {
+  color: var(--color-footer-text);
   padding: var(--space-md) var(--space-xl);
   background: var(--color-accent);
   border-radius: var(--radius-md);
@@ -614,4 +665,64 @@ footer {
   padding: var(--space-xl);
   margin-top: var(--space-xl);
   text-align: center;
+}
+
+@keyframes outTopToInLittle {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes outTopToInBig {
+    0% {
+        transform: translateY(-300%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes outLeftToIn {
+    0% {
+        transform: translateX(-200%) skew(10deg);
+    }
+
+    100% {
+        transform: translateX(0) skew(10deg);
+    }
+}
+
+@keyframes outRightToIn {
+    0% {
+        transform: translateX(200%) skew(-10deg);
+    }
+
+    100% {
+        transform: translateX(0) skew(-10deg);
+    }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
