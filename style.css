@@ -1,290 +1,4 @@
-/* @import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    line-height: 1.7;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 200vh;
-}
-
-img {
-    width: 10px;
-    height: 10px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-li {
-    margin-left: 3rem;
-    list-style-type: none;
-    padding: 0.5rem;
-
-    border: 1px solid red; 
-    border-top-color: transparent; 
-    border-right-color: transparent;
-}
-
-li:last-child {
-    border-bottom-left-radius: 10px;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: rebeccapurple;
-    gap: 10rem;
-}
-
-
-.logo {
-    width: max-content;
-    height: max-content;
-
-    font-size: 1.25rem;
-}
-
-.navbar {
-    margin-top: 2rem;
-    padding-inline: 2rem;
-    
-    display: flex;
-    justify-content: space-between;
-}
-
-.links {
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-}
-
-.regulament {
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.links > div,
-.regulament {
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-
-.links > div:hover,
-.regulament:hover {
-    background-color: #f0f0f0;
-}
-
-.editii, 
-.poze {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.editii img,
-.poze img {
-    transition: all 0.3s ease;
-}
-
-.dropdown {
-    position: absolute;
-    min-width: 150px;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 7px 5px 5px 0px rgba(0,0,0,0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    border: 1px solid #e0e0e0;
-}
-
-.dropdown a {
-    display: block;
-    text-decoration: none;
-    color: #333;
-    padding: 0.75rem 1rem;
-    transition: background-color 0.2s;
-}
-
-.dropdown a:hover {
-    background-color: #f0f0f0;
-}
-
-.editii:hover img, 
-.poze:hover img {
-    rotate: 90deg;
-}
-
-
-.editii:hover .dropdown,
-.poze:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-
-.dropdown a:first-child {
-    border-radius: 4px 4px 0 0;
-}
-
-.dropdown a:not(:last-child) {
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.dropdown a:last-child {
-    border-radius: 0 0 4px 4px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    font-size: 1.75rem;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 2rem;
-
-    gap: 5rem;
-}
-
-main .about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-main .about span a {
-    color: revert;
-    text-decoration: revert;
-}
-
-main .about .about-text {
-    width: 30%;
-}
-
-main .about .about-text p {
-    display: inline;
-}
-
-main .team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-main .team .team-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-main .calendar,
-main .calendar .event-cards {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    gap: 1rem;
-}
-
-main .calendar {
-    align-items: center;
-    gap: 2rem;
-}
-
-main .calendar .title {
-    font-size: 1.5rem;
-}
-
-main .calendar .event-cards .card {
-    padding: 1rem 2.5rem;
-    background: red;
-    border-radius: 5px;
-    font-size: 1.10rem;   
-}
-
-main .calendar .event-cards .card p:first-child {
-    font-weight: 600;
-}
-
-.arrow {
-    position: relative;
-    display: flex;
-    align-self: center;
-    width: 4px;
-    height: 50px;
-    margin: 0 29px;
-    border-radius: 9999px;
-    background-color: #000000;
-}
-
-.arrow::before,
-.arrow::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 2px);
-    width: 4px;
-    height: 20px;
-    border-radius: 9999px;
-    background-color: #000000;
-    transform-origin: 50% calc(100% - 2px);
-}
-
-.arrow::before {
-    transform: rotate(45deg);
-}
-
-.arrow::after {
-    transform: rotate(-45deg);
-}
-
-
-footer {
-    background: black;
-    color: white;
-
-    display: flex;
-    justify-content: space-between;
-
-    padding: 2rem;
-    margin-top: 2rem;
-    
-    text-align: center;
-} */
-/* ---------- DESIGN TOKENS ---------- */
+@import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 :root {
   /* 🎨 Colors */
   --color-primary: rebeccapurple;
@@ -330,7 +44,6 @@ footer {
 }
 
 /* ---------- GLOBAL RESET ---------- */
-@import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 
 * {
   margin: 0;
@@ -348,11 +61,6 @@ body {
   min-height: 200vh;
   background-color: var(--color-background);
   color: var(--color-text);
-}
-
-img {
-  width: 10px;
-  height: 10px;
 }
 
 a {
@@ -374,12 +82,33 @@ li:last-child {
 }
 
 /* ---------- HEADER ---------- */
+
 header {
+  color: #fff;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  background: url(images/laptop-dark.png) center/cover no-repeat;
   gap: var(--space-xxl);
+}
+
+header .container h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards 0.6s;
+}
+
+header .container h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards 0.9s;
+}
+
+header .container h3 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards 0.3s;
 }
 
 header .header-arrow {
@@ -387,11 +116,11 @@ header .header-arrow {
   display: inline-block;
   width: 62px;
   height: 33px;
-  bottom: 0;
+  bottom: 10px;
   left: 50%;
   transform: translate(-50%);
   animation: fadeIn 3s ease-in-out forwards, bounce 1.2s infinite ease-in-out;
-  transition: opacity 0.5s ease;
+  transition: opacity 2s ease;
 }
 
 header .header-arrow::before,
@@ -427,9 +156,10 @@ header .header-arrow.hide::after {
 }
 
 .logo {
-  width: max-content;
-  height: max-content;
-  font-size: var(--font-size-md);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
 }
 
 .navbar {
@@ -441,14 +171,22 @@ header .header-arrow.hide::after {
 
 .links {
   display: flex;
-  gap: var(--space-md);
-  align-items: center;
   justify-content: center;
+  flex: 1;
+  align-items: center;
+  
+  gap: var(--space-md);
   font-size: var(--font-size-md);
 }
 
-.links .poze:hover img,
-.links .editii:hover img {
+.links .editii img,
+.links .poze img {
+  width: 10px;
+  height: 10px;
+}
+
+.links .poze img,
+.links .editii img {
   filter: invert(1);
 }
 
@@ -456,7 +194,8 @@ header .header-arrow.hide::after {
   font-size: var(--font-size-md);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .links > div,
@@ -469,7 +208,7 @@ header .header-arrow.hide::after {
 
 .links > div:hover,
 .regulament:hover {
-  color: var(--color-background);
+  color: #c0c0c0;
 }
 
 /* ---------- DROPDOWN ---------- */
@@ -487,6 +226,7 @@ header .header-arrow.hide::after {
 }
 
 .dropdown {
+  z-index: 20;
   position: absolute;
   min-width: 150px;
   top: 100%;
@@ -504,14 +244,13 @@ header .header-arrow.hide::after {
 .dropdown a {
   display: block;
   text-decoration: none;
-  color: #333;
+  color: #000;
   padding: 0.75rem 1rem;
   transition: background-color var(--transition-fast);
 }
 
 .dropdown a:hover {
-  /* background-color: var(--color-surface); */
-  background-color: #f0f0f0;
+  background-color: #e4e4e4;
 }
 
 .editii:hover img,
@@ -579,6 +318,69 @@ main .about .about-text p {
   display: inline;
 }
 
+/* ABOUT TITLE IMPROVEMENT */
+main .about-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+main .about-title h2 {
+  font-size: 2.4rem;
+  position: relative;
+  display: inline-block;
+  color: #1f1f1f;
+}
+
+main .about-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: #27ae60;
+  border-radius: 3px;
+}
+
+main .about .about-text {
+  width: 80ch;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+
+/* VALUES SECTION */
+main .values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: rgba(245, 247, 251, 0.9);
+  border-radius: 10px;
+}
+
+main .value-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main .value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+main .value-card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
 /* TEAM SECTION */
 main .team {
   display: flex;
@@ -591,6 +393,49 @@ main .team .team-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+}
+
+main .team-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+main .team-title h2 {
+  font-size: 2.4rem;
+  position: relative;
+  display: inline-block;
+  color: #1f1f1f;
+}
+
+main .team-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: #27ae60;
+  border-radius: 3px;
+}
+
+main .team-list > div {
+  background: #f4f6f5;
+  border-left: 5px solid #27ae60;
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main .team-list > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+main .team-list h3 {
+  margin-bottom: 0.8rem;
+  color: #2ecc71;
 }
 
 /* CALENDAR SECTION */
@@ -608,19 +453,42 @@ main .calendar {
 }
 
 main .calendar .title {
+  position: relative;
   font-size: var(--font-size-lg);
 }
 
+main .calendar .title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: #27ae60;
+  border-radius: 3px;
+}
+
 main .calendar .event-cards .card {
-  color: var(--color-footer-text);
-  padding: var(--space-md) var(--space-xl);
-  background: var(--color-accent);
+  background: #2bc016;
+  color: #000;
   border-radius: var(--radius-md);
   font-size: 1.1rem;
+
+  padding: var(--space-xl);
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 main .calendar .event-cards .card p:first-child {
   font-weight: 600;
+}
+
+
+main .calendar .event-cards .card:hover {
+  transform: translateY(-5px);
 }
 
 /* ARROW ELEMENT */
@@ -658,13 +526,31 @@ main .calendar .event-cards .card p:first-child {
 
 /* ---------- FOOTER ---------- */
 footer {
-  background: var(--color-footer-bg);
+  background: #111111;
   color: var(--color-footer-text);
   display: flex;
   justify-content: space-between;
   padding: var(--space-xl);
   margin-top: var(--space-xl);
   text-align: center;
+}
+
+footer .left,
+footer .middle,
+footer .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+footer .left {
+  align-items: flex-start;
+}
+
+footer .right {
+  align-items: flex-end;
 }
 
 @keyframes outTopToInLittle {
@@ -725,4 +611,50 @@ footer {
     100% {
         opacity: 1;
     }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ NAVBAR ANIMATIONS — FIXED */
+.navbar .logo,
+.navbar .links,
+.navbar .regulament {
+  opacity: 0;
+  transform: translateY(-25px);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;   /* ✅ ensuring animation always runs */
+}
+
+/* ✅ Each element with its own delay */
+.navbar .logo {
+  animation-name: navbarFade;
+  animation-delay: 0.2s;
+}
+
+.navbar .links {
+  animation-name: navbarFade;
+  animation-delay: 0.4s;
+}
+
+.navbar .regulament {
+  animation-name: navbarFade;
+  animation-delay: 0.6s;
+}
+
+/* ✅ Actual animation */
+@keyframes navbarFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

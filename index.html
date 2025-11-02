@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CommunIty</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                This is a placeholder
+                <img src="images/white-logo.svg" alt="CommunITy Logo">
             </div>
         
             <div class="links">
@@ -41,7 +43,7 @@
                     Poze
                     <img src="images/arrow-right.svg" alt="">
                     <div class="dropdown">
-                        <a href="https://drive.google.com/drive/folders/1JO_G8nb_bZeC0XEUvOP70r9-gAH0TnU1?usp=drive_link">Arhiva Foto 2025</a>
+                        <a href="https://drive.google.com/drive/folders/1JO_G8nb_bZeC0XEUvOP70r9-gAH0TnU1?usp=drive_link" target="_blank" noreferrer noopener>Arhiva Foto 2025</a>
                         <a href="#">Arhiva Foto 2026</a>
                         <a href="#">Arhiva Foto 2027</a>
                     </div>
@@ -70,18 +72,18 @@
 
             <div class="about-text">
                 <p>
-                    Concursul Municipal de Design Thinking CommunITy are ca obiectiv principal stimularea tinerilor sa gaseasca solutii creative pentru probleme identificate de ei in comunitate.
+                    Concursul Municipal de Design Thinking CommunITy are ca obiectiv principal stimularea tinerilor să găsească soluții creative pentru probleme identificate de ei în comunitate.
                 </p>
 
                 <p>
-                    La concurs pot participa echipe de cate 3 sau 4 elevi de liceu, care vor identifica o problema care afecteaza comunitatea in care ei traiesc, vor concepe o solutie bazata pe tehnologie si o prezentare in Powerpoint a unui model grafic de aplicatie.
+                    La concurs pot participa echipe de câte 3 sau 4 elevi de liceu, care vor identifica o problemă care afectează comunitatea în care ei trăiesc, vor concepe o soluție bazată pe tehnologie și o prezentare în Powerpoint a unui model grafic de aplicație.
                 </p>
 
                 <p>
-                    Concursul este inclus in 
+                    Concursul este inclus în 
                     <span>
-                        <a href="http://ismb.edu.ro/documente/Ed_permanenta/2025/Calendar_PEEM_2025.pdf#page=26">
-                            Calendarul Proiectelor de Educatie Extrascolara Municipale - CPEEM 2025, Domeniul A11, pozitia 11
+                        <a href="http://ismb.edu.ro/documente/Ed_permanenta/2025/Calendar_PEEM_2025.pdf#page=26" target="_blank" noreferrer noopener>
+                            Calendarul Proiectelor de Educație Extrașcolară Municipale – CPEEM 2025, Domeniul A11, poziția 11
                         </a>
                     </span>
                     .
@@ -89,20 +91,39 @@
             </div>
         </section>
 
+        <section class="values">
+            <div class="value-card" data-aos="fade-right">
+                <img src="images/idea.svg" alt="">
+                <h3>Creativitate</h3>
+                <p>Încurajăm ideile care schimbă comunitatea.</p>
+            </div>
+            <div class="value-card" data-aos="fade-up">
+                <img src="images/team.svg" alt="">
+                <h3>Echipă</h3>
+                <p>Învățăm să colaborăm și să construim împreună.</p>
+            </div>
+            <div class="value-card" data-aos="fade-left">
+                <img src="images/tech.svg" alt="">
+                <h3>Tehnologie</h3>
+                <p>Folosim inovația digitală pentru impact real.</p>
+            </div>
+        </section>
+
+
         <section class="team" id="team">
             <div class="team-title">
                 <h2>Echipa De Organizare</h2>
             </div>
 
             <div class="team-list">
-                <div class="organiser">
+                <div class="organiser" data-aos="fade-right">
                     <h3>Organizator</h3>
                     <ul>
                         <li>Catedra de informatica a Colegiului National Cantemir-Voda</li>
                     </ul>
                 </div>
 
-                <div class="coordinators">
+                <div class="coordinators" data-aos="fade-left">
                     <h3>Coordonatori</h3>
                     <ul>
                         <li>Prof. Iuliana Serban</li>
@@ -110,7 +131,7 @@
                     </ul>
                 </div>
 
-                <div class="partners">
+                <div class="partners" data-aos="fade-right">
                     <h3>Parteneri</h3>
                     <ul>
                         <li>Biblioteca Metropolitana Bucuresti - filiala Dimitrie Cantemir</li>
@@ -119,7 +140,7 @@
                     </ul>
                 </div>
 
-                <div class="juries">
+                <div class="juries" data-aos="fade-left">
                     <h3>
                         Juriul
                     </h3>
@@ -134,9 +155,9 @@
 
         <section class="calendar" id="calendar">
             <div class="title">
-                <h1>
+                <h2>
                     Calendar
-                </h1>
+                </h2>
             </div>
 
             <div class="event-cards">
@@ -192,7 +213,7 @@
     <footer>
         <div class="left">
             <div class="img-container">
-                This is a placeholder
+                <img src="images/white-logo.svg" alt="CommunITy Logo">
             </div>
         </div>
 
@@ -208,12 +229,15 @@
 
         <div class="right">
             <div class="img-container">
-                This is a placeholder
+                <img src="images/cncv.svg" alt="CNCV Logo">
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
+        AOS.init();
         window.addEventListener("scroll", () => {
             const arrow = document.querySelector(".header-arrow");
 
