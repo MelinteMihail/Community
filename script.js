@@ -175,7 +175,7 @@ function updateSelectedTeamContent() {
 
     const eleviText = "Elevi: " + obj.elevi.join(", ");
     const profesoriText = "Profesori Coordonatori: " + obj.profesori.join(", ");
-    const scoalaText = "Scoala de Provenienta: " + obj.scoala;
+    const scoalaText = "Scoala de Proveniența: " + obj.scoala;
     
     tab.querySelector('.text').textContent = obj.name;
     tab.querySelector('.elevi').textContent = eleviText;

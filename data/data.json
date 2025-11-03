@@ -2,46 +2,46 @@
     "2025": {
         "first": {
             "name": "Jobee",
-            "elevi": ["Vlad", "Ilinca", "Diana", "Daria"],
-            "profesori": ["Mihaela Anca"],
-            "scoala": "Colegiul Național “Ion Luca Caragiale” București",
+            "elevi": ["Călin Daria-Mihaela", "Glăvan Vlad-Andrei", "Stanciu Ilinca-Gabriela", "Enache Diana"],
+            "profesori": ["Anca Mihaela"],
+            "scoala": "Colegiul Național I. L. Caragiale",
             "link": "https://docs.google.com/presentation/d/1WzNXOkPjjTgedf3gM92yplYgzNguW9nO/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
         "second": {
             "name": "KitchenBro",
-            "elevi": ["Dobriță Rareș", "Darie Ioana", "Cioc Matei", "Aad Elias"],
-            "profesori": ["Iuliana Serban"],
-            "scoala": "Colegiul Național Cantemir Vodă",
+            "elevi": ["Dobriță Rareș", "Darie Ioana Alexandra", "Cioc Matei", "Aad Elias"],
+            "profesori": ["Șerban Iuliana Sofia", "Splais Carmen Florentina"],
+            "scoala": "Colegiul Național \"Cantemir-Vodă\"",
             "link": "https://docs.google.com/presentation/d/1aDJyGsFCuQSy_1CqNCX60JE7-7z0A4qN/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
         "third": {
             "name": "Arvaya",
             "elevi": ["Matei Iulia Teodora", "Nițoiu Mara", "Ștefănescu Diana"],
             "profesori": ["Popa Simona Mihaela"],
-            "scoala": "Colegiul Național “Gheorghe Lazăr”",
+            "scoala": "Colegiul Național \"Gheorghe Lazăr\"",
             "link": "https://docs.google.com/presentation/d/1ORGPwDqcbTTgCmtOScZN5q81lI4EWLTy/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         }
     },
     "2024": {
         "first": {
             "name": "Assisto",
-            "elevi": ["Plesa Sara", "Soare Mina", "Croitoru Maia"],
-            "profesori": ["Balcă Mihaela"],
-            "scoala": "Colegiul Național “Școala Centrală”",
-            "link": ""
+            "elevi": ["Pleșa Sara-Gabriela", "Soare Mina", "Croitoru Maia-Andreea"],
+            "profesori": ["Balcă Mihaela", "Zota Gabriela"],
+            "scoala": "Colegiul Național \"Școala Centrală\"",
+            "link": "https://docs.google.com/presentation/d/1AzXSU0I1vcw9s1vbdL0UZh4HihLcIrpp/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
         "second": {
             "name": "Ceasul Social",
-            "elevi": ["Dumitrescu Radu", "Hoang Hai- Yen", "Țiclete Sorin"],
+            "elevi": ["Ciupitu Ruxandra", "Dumitrescu Radu", "Hoang Hai-Yen", "Țiclete Sorin"],
             "profesori": ["Iuliana Serban"],
-            "scoala": "Colegiul Național Cantemir Vodă",
-            "link": ""
+            "scoala": "Colegiul Național \"Cantemir-Vodă\"",
+            "link": "https://docs.google.com/presentation/d/1dM66FQlgxpELpubF3Al3xUOw60i6351-/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
         "third": {
-            "name": "Echipa Trei",
-            "elevi": [],
-            "profesori": [],
-            "scoala": "",
+            "name": "MOVE",
+            "elevi": ["Ene Mihai Lazăr", "Mușățoiu Matei", "Pascu Mircea Constantin"],
+            "profesori": ["Anca Mihaela", "Văceanu Cornelia"],
+            "scoala": "Colegiul Național I. L. Caragiale",
             "link": ""
         }
     }
