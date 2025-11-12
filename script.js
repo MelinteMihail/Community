@@ -157,7 +157,7 @@ function handlePodiumClick(clickedPodium) {
                  : clickedPodium.classList.contains('second') ? 2
                  : 3;
 
-    const infoElements = tab.querySelectorAll('.info > *');
+    const infoElements = tab.querySelectorAll('.info-card');
     const fadeDuration = 300;
 
     infoElements.forEach(el => el.classList.remove('visible'));
@@ -172,15 +172,12 @@ function handlePodiumClick(clickedPodium) {
 function updateSelectedTeamContent() {
     const posStr = parsePositionNumberToString(selectedTeam);
     const obj = savedData[yearArray[currentYear]][posStr];
-
-    const eleviText = "Elevi: " + obj.elevi.join(", ");
-    const profesoriText = "Profesori Coordonatori: " + obj.profesori.join(", ");
-    const scoalaText = "Scoala de Proveniența: " + obj.scoala;
     
     tab.querySelector('.text').textContent = obj.name;
-    tab.querySelector('.elevi').textContent = eleviText;
-    tab.querySelector('.profesori').textContent = profesoriText;
-    tab.querySelector('.scoala').textContent = scoalaText;
+    tab.querySelector('.elevi').textContent = obj.elevi.join(", ");
+    tab.querySelector('.profesori').textContent = obj.profesori.join(", ");
+    tab.querySelector('.scoala').textContent = obj.scoala;
+
     tab.querySelector('.link-wrapper .link').href = obj.link;
 
     console.log("Selected team:", selectedTeam);
@@ -200,3 +197,35 @@ function resetTabPositions() {
 function parsePositionNumberToString(num) {
     return ['none', 'first', 'second', 'third'][num] || 'none';
 }
+
+/* ===========================
+   ✅ MOBILE SWIPE SUPPORT
+   =========================== */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    // Minimum distance for swipe detection
+    if (Math.abs(swipeDistance) < 50) return;
+
+    if (swipeDistance < 0) {
+        // Swipe LEFT → next year
+        changeYear(1);
+    } else {
+        // Swipe RIGHT → previous year
+        changeYear(-1);
+    }
+}
+
+// Add swipe listeners on the ENTIRE TAB AREA
+tabWrapper.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+tabWrapper.addEventListener("touchend", e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Winners</title>
+    <link rel="icon" href="images/icon-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="winners.css">
     <script defer src="script.js"></script>
 </head>
@@ -13,7 +14,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                This is a placeholder
+                <img src="images/black-logo.svg" alt="CommunITy Logo">
             </div>
         
             <div class="links">
@@ -24,14 +25,18 @@
                 </div>
                 <div class="poze">
                     Poze
-                    <img src="images/arrow-right.svg" alt="">
+                    <img src="images/arrow-right.svg" alt="" class="navbar-arrow">
                     <div class="dropdown">
                         <a href="https://drive.google.com/drive/folders/1JO_G8nb_bZeC0XEUvOP70r9-gAH0TnU1?usp=drive_link" target="_blank" noreferrer noopener>Arhiva Foto 2025</a>
                     </div>
                 </div>
             </div>
 
-            <div class="regulament">Regulament</div>
+            <div class="regulament">
+                <a href="regulament_CommunITy.pdf" target="_blank">
+                    Regulament
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -65,19 +70,61 @@
                         </div>
                     </div>
 
-                    <div class="info">
-                        <h1 class="text hidden"></h1>
-                        <h3 class="elevi hidden"></h3>
-                        <h3 class="profesori hidden"></h3>
-                        <h3 class="scoala hidden"></h3>
-                        <h3 class="link-wrapper hidden">
-                            <a href="" class="link" target="_blank" noreferrer noopener>Link Proiect</a>
+                <div class="info">
+                    <div class="info-card hidden">
+                        <h1 class="text"></h1>
+                    </div>
+
+                    <div class="info-card hidden">
+                        <h3 class="elevi-header">Elevi</h3>
+                        <p class="elevi"></p>
+                    </div>
+
+                    <div class="info-card hidden">
+                        <h3 class="profesori-header">Profesori Coordonatori</h3>
+                        <p class="profesori"></p>
+                    </div>
+
+                    <div class="info-card hidden">
+                        <h3 class="scoala-header">Școala de Proveniență</h3>
+                        <p class="scoala"></p>
+                    </div>
+
+                    <div class="info-card hidden link-wrapper">
+                        <h3>
+                            <a href="" class="link" target="_blank">Link Proiect</a>
                         </h3>
                     </div>
+                </div>
+
                 </div>
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="left">
+            <div class="img-container">
+                <img src="images/white-logo.svg" alt="CommunITy Logo">
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="top">
+                Copyright CommunITy 2025
+            </div>
+
+            <div class="bottom">
+                Pentru mai multe informatii: contact: concurs.community@gmail.com
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="img-container">
+                <img src="images/cncv-logo.svg" alt="CNCV Logo" class="cncv-logo">
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
