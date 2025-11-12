@@ -163,6 +163,12 @@ header .header-arrow.hide::after {
   flex: 1;
 }
 
+.logo img {
+  max-width: 350px;
+  height: auto; 
+  object-fit: contain; 
+}
+
 .navbar {
   margin-top: var(--space-xl);
   padding-inline: var(--space-xl);
@@ -700,6 +706,9 @@ footer .right img {
 
   /* Medium devices (landscape tablets, 769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .navbar .logo img {
+    max-width: 250px;
+  }
   main .about .about-text {
     width: 60ch;
   }
