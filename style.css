@@ -554,6 +554,7 @@ footer {
   color: var(--color-footer-text);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--space-xl);
   margin-top: var(--space-xl);
   text-align: center;
@@ -561,7 +562,7 @@ footer {
 
 footer .left,
 footer .middle,
-footer .right .img-container {
+footer .right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -577,15 +578,21 @@ footer .left {
   align-items: flex-start;
 }
 
-footer .right .img-container {
+footer .right {
   align-items: flex-end;
+}
+
+footer .left img,
+footer .right img {
+  max-width: 350px;
+  height: auto; 
+  object-fit: contain; 
 }
 
 .cncv-logo {
   border-radius: 10px;
-  width: 75%;
-  height: max-content;
 }
+
 
 @keyframes bounce {
   0%, 100% {
@@ -623,6 +630,7 @@ footer .right .img-container {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -646,9 +654,14 @@ footer .right .img-container {
   }
 
   footer .left,
-  footer .right .img-container {
+  footer .right  {
     align-items: center;
     justify-content: center;
+  }
+
+  footer .left img,
+  footer .right img {
+    max-width: 250px;
   }
 }
 
@@ -685,9 +698,38 @@ footer .right .img-container {
   }
 }
 
-/* Medium devices (landscape tablets, 769px - 1024px) */
+  /* Medium devices (landscape tablets, 769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  /* your styles */
+  main .about .about-text {
+    width: 60ch;
+  }
+
+  footer {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  footer .left,
+  footer .middle,
+  footer .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .right {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  footer .left img,
+  footer .right img {
+    max-width: 250px;
+  }
+
+  footer .middle {
+    flex: 2
+  }
 }
 
 /* Large devices (desktops, 1025px - 1200px) */
