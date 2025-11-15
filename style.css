@@ -1043,7 +1043,7 @@ footer .right img {
   /* your styles */
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   #mobilenav {
     display: block;
   }
@@ -1059,18 +1059,15 @@ footer .right img {
 
   main .about .about-text {
     font-size: var(--font-size-sm);
-    width: 90%;
-    padding: 0 var(--space-md);
+    width: 40ch;
   }
 
   main .values {
     flex-direction: column;
-    width: 90%;
   }
 
   main .team {
-    padding-inline: var(--space-sm);
-    width: 90%;
+    padding-inline: var(--space-sm)
   }
 
   footer {
@@ -1079,22 +1076,34 @@ footer .right img {
   }
 
   footer .left,
-  footer .right {
+  footer .right  {
     align-items: center;
     justify-content: center;
   }
 
-  .container h1 {
-    font-size: 2rem;
-  }
-
-  .container h2 {
-    font-size: 1.5rem;
+  footer .left img,
+  footer .right img {
+    max-width: 250px;
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* Small devices (portrait tablets and large phones, 601px - 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  #mobilenav {
+    display: block;
+  }
+
+  .navbar .links,
+  .navbar .regulament {
+    display: none;
+  }
+
+  .navbar {
+    padding-inline: var(--space-md);
+  }
+
   main .about .about-text {
+    font-size: var(--font-size-base);
     width: 60ch;
   }
 
@@ -1107,7 +1116,7 @@ footer .right img {
   }
 
   main .team {
-    padding-inline: var(--space-sm);
+    padding-inline: var(--space-sm)
   }
 
   footer {
@@ -1116,8 +1125,55 @@ footer .right img {
   }
 
   footer .left,
+  footer .right .img-container {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Medium devices (landscape tablets, 769px - 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .navbar .logo img {
+    max-width: 250px;
+  }
+  main .about .about-text {
+    width: 60ch;
+  }
+
+  footer {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  footer .left,
+  footer .middle,
+  footer .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   footer .right {
     align-items: center;
     justify-content: center;
   }
+  
+  footer .left img,
+  footer .right img {
+    max-width: 250px;
+  }
+
+  footer .middle {
+    flex: 2
+  }
+}
+
+/* Large devices (desktops, 1025px - 1200px) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* your styles */
+}
+
+/* Extra large devices (large desktops, 1201px - 1399px) */
+@media only screen and (min-width: 1201px) and (max-width: 1399px) {
+  /* your styles */
 }

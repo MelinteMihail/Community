@@ -5,6 +5,13 @@ const tab = document.querySelector('.tab');
 const tabWrapper = document.querySelector('.tab-wrapper');
 const podiumParent = tab.querySelector('.podium-parent');
 
+const mobilenav = document.getElementById('mobilenav');
+const mobilemenu = document.getElementById('mobilemenu');
+const mobilenavBtn = document.querySelector(".mobilenav_btn");
+const menuNavItems = document.querySelectorAll(".menu_nav_item");
+const closeBtn = document.querySelector(".closebtn");
+const hasDropdownItems = document.querySelectorAll(".has-dropdown");
+
 const secondTab = tab.cloneNode(true);
 secondTab.className = 'second-tab';
 tabWrapper.appendChild(secondTab);
@@ -197,3 +204,54 @@ function resetTabPositions() {
 function parsePositionNumberToString(num) {
     return ['none', 'first', 'second', 'third'][num] || 'none';
 }
+
+function mobilenav_click() {
+    if(mobilenav.classList.contains('viz')) {
+        mobilenav_close();
+    } else {
+        mobilenav.classList.add('viz');
+        mobilemenu.classList.add('viz');
+    }
+}
+
+function mobilenav_close() {
+    mobilenav.classList.remove('viz');
+    mobilemenu.classList.remove('viz');
+    // Close all dropdowns when menu closes
+    hasDropdownItems.forEach(item => {
+        item.classList.remove('open');
+    });
+}
+
+mobilenavBtn.addEventListener("click", mobilenav_click);
+closeBtn.addEventListener("click", mobilenav_close);
+
+// Handle dropdown toggles
+hasDropdownItems.forEach(item => {
+    const span = item.querySelector('span');
+    if (span) {
+        span.addEventListener('click', (e) => {
+            e.stopPropagation();
+            item.classList.toggle('open');
+        });
+    }
+});
+
+// Close menu when clicking regular nav items (not dropdowns)
+menuNavItems.forEach(item => {
+    if (!item.classList.contains('has-dropdown')) {
+        item.addEventListener("click", mobilenav_close);
+    }
+});
+
+// Close dropdown links also close the menu
+document.querySelectorAll('.mobile-dropdown a').forEach(link => {
+    link.addEventListener('click', mobilenav_close);
+});
+
+// Close menu when clicking outside
+mobilemenu.addEventListener("click", (e) => {
+    if(e.target === mobilemenu) {
+        mobilenav_close();
+    }
+});
