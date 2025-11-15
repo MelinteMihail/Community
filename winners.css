@@ -575,7 +575,6 @@ main {
 .podium-parent {
   margin-top: var(--space-xl);
   display: flex;
-  justify-content: center;
   align-items: end;
   height: 17.5rem;
 }
@@ -607,7 +606,7 @@ main {
 
 .podium .name {
   color: var(--color-warning);
-  justify-self: center;
+  text-align: center;
   font-weight: bolder;
   font-size: var(--font-size-base);
   transform: translateY(-150%);
