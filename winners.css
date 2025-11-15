@@ -575,6 +575,7 @@ main {
 .podium-parent {
   margin-top: var(--space-xl);
   display: flex;
+  justify-content: center;
   align-items: end;
   height: 17.5rem;
 }
@@ -741,9 +742,8 @@ footer .right .img-container {
     padding-inline: var(--space-md);
   }
 
-  /* Allow wrapper to grow with content */
   .tab-wrapper {
-    min-height: 50rem; /* Increase min-height for mobile */
+    min-height: 50rem;
     height: auto;
   }
 
