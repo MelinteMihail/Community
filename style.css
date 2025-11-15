@@ -83,6 +83,298 @@ li:last-child {
   border-bottom-left-radius: var(--radius-lg);
 }
 
+#mobilenav {
+  position: fixed;
+  z-index: 200;
+  height: 72px;
+  right: 20px;
+  top: 20px;
+  background-color: rgba(0,0,0,0.5);
+  transition: background-color 0.2s ease-in-out;
+  width: 64px;
+  border-radius: 8px;
+  display: none;
+}
+
+#mobilenav.viz {
+  background-color: rgba(0,0,0,0.75);
+}
+
+#mobilenav .btn {
+  width: 100%;
+  height: 100%;
+  padding: 16px 0 0 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+#mobilenav .btn i {
+  display: block;
+  height: 2px;
+  background-color: #00B300;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+#mobilenav .btn i:before {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+#mobilenav .btn:hover i:before {
+  width: 100%;
+}
+
+#mobilenav .btn .l1 {
+  width: 28px;
+}
+
+#mobilenav .btn .l2 {
+  width: 19.6px;
+  transition: all 0.2s ease-in-out;
+}
+
+#mobilenav .btn:hover .l2 {
+  width: 28px;
+}
+
+#mobilenav .btn span {
+  color: #fff;
+  font-size: 11px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease-in-out;
+  text-align: center;
+}
+
+#mobilenav .btn:hover span {
+  color: #00B300;
+}
+
+#mobilemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  background: rgba(36, 36, 36, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out 0.8s, visibility 0s linear 1.1s;
+  overflow: hidden;
+}
+
+#mobilemenu.viz {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+  overflow: hidden;
+}
+
+#mobilemenu .menu {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+#mobilemenu.viz .menu {
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 480px) {
+  #mobilemenu .menu {
+    max-width: 100%;
+  }
+}
+
+#mobilemenu .menu .shadow {
+  display: none;
+}
+
+#mobilemenu .menu .shadow .closebtn {
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 20px;
+  right: 20px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+#mobilemenu .menu .shadow .closebtn::before,
+#mobilemenu .menu .shadow .closebtn::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+}
+
+#mobilemenu .menu .shadow .closebtn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#mobilemenu .menu .shadow .closebtn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#mobilemenu .menu .content {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #101010;
+  width: 0;
+  transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  overflow: hidden;
+  transform-origin: right center;
+}
+
+#mobilemenu.viz .menu .content {
+  width: 100%;
+  transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#mobilemenu .menu .content .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.5s;
+}
+
+#mobilemenu.viz .menu .content .front {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.5s;
+}
+
+#mobilemenu .menu .content .back {
+  position: absolute;
+  width: 80px;
+  border-right: solid 1px rgba(0, 179, 0, 0.5);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.5s;
+}
+
+#mobilemenu.viz .menu .content .back {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.5s;
+}
+
+#mobilemenu .menu .content .front h1 {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  background-color: #101010;
+  padding: 20px 0 21px 0;
+  font-size: 22px;
+  margin: 80px 0 0 50px;
+  line-height: 1;
+}
+
+#mobilemenu .menu .content .front ul {
+  margin: 20px 0 0 70px;
+  padding: 24px 0;
+  list-style: none;
+  background-color: #101010;
+}
+
+#mobilemenu .menu .content .front ul li {
+  margin-top: 20px;
+  margin-left: 0;
+  border: none;
+  padding: 0;
+}
+
+#mobilemenu .menu .content .front ul li:nth-child(1) {
+  margin-top: 0;
+}
+
+#mobilemenu .menu .content .front ul li a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  display: block;
+}
+
+/* Mobile menu dropdown styles */
+#mobilemenu .menu .content .front ul li.has-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+#mobilemenu .menu .content .front ul li.has-dropdown > span {
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#mobilemenu .menu .content .front ul li.has-dropdown > span img {
+  width: 10px;
+  height: 10px;
+  filter: invert(1);
+  transition: transform 0.3s ease;
+}
+
+#mobilemenu .menu .content .front ul li.has-dropdown.open > span img {
+  transform: rotate(90deg);
+}
+
+#mobilemenu .menu .content .front ul li.has-dropdown .mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+#mobilemenu .menu .content .front ul li.has-dropdown.open .mobile-dropdown {
+  max-height: 300px;
+}
+
+#mobilemenu .menu .content .front ul li.has-dropdown .mobile-dropdown a {
+  display: block;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #00B300;
+  border: none;
+}
+
 /* ---------- HEADER ---------- */
 
 header {
@@ -639,7 +931,7 @@ footer .right img {
 
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
 
   main .about .about-text {
     font-size: var(--font-size-sm);
@@ -669,12 +961,12 @@ footer .right img {
   footer .right img {
     max-width: 250px;
   }
-}
+} */
 
 /* Small devices (portrait tablets and large phones, 601px - 768px) */
-@media only screen and (min-width: 601px) and (max-width: 768px) {
+/* @media only screen and (min-width: 601px) and (max-width: 768px) { */
   /* your styles */
-
+/* 
   main .about .about-text {
     font-size: var(--font-size-base);
     width: 60ch;
@@ -702,10 +994,10 @@ footer .right img {
     align-items: center;
     justify-content: center;
   }
-}
+} */
 
   /* Medium devices (landscape tablets, 769px - 1024px) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .navbar .logo img {
     max-width: 250px;
   }
@@ -739,7 +1031,7 @@ footer .right img {
   footer .middle {
     flex: 2
   }
-}
+} */
 
 /* Large devices (desktops, 1025px - 1200px) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -751,3 +1043,81 @@ footer .right img {
   /* your styles */
 }
 
+@media only screen and (max-width: 768px) {
+  #mobilenav {
+    display: block;
+  }
+
+  .navbar .links,
+  .navbar .regulament {
+    display: none;
+  }
+
+  .navbar {
+    padding-inline: var(--space-md);
+  }
+
+  main .about .about-text {
+    font-size: var(--font-size-sm);
+    width: 90%;
+    padding: 0 var(--space-md);
+  }
+
+  main .values {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  main .team {
+    padding-inline: var(--space-sm);
+    width: 90%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  footer .left,
+  footer .right {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  main .about .about-text {
+    width: 60ch;
+  }
+
+  main .values {
+    flex-direction: column;
+  }
+
+  main .values .value-card {
+    max-width: 600px;
+  }
+
+  main .team {
+    padding-inline: var(--space-sm);
+  }
+
+  footer {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  footer .left,
+  footer .right {
+    align-items: center;
+    justify-content: center;
+  }
+}

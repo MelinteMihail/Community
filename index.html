@@ -10,6 +10,56 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
+        <section id="mobilenav">
+        <div class="btn mobilenav_btn">
+            <i class="l1"></i>
+            <i class="l2"></i>
+            <i class="l1"></i>
+            <span>Menu</span>
+        </div>
+    </section>
+
+    <section id="mobilemenu">
+        <div class="menu">
+            <div class="shadow">
+                <div class="closebtn"></div>
+            </div>
+            <div class="content">
+                <div class="back"></div>
+                <div class="front">
+                    <h1>CommunITy</h1>
+                    <ul>
+                        <li class="menu_nav_item"><a href="#about">About</a></li>
+                        <li class="menu_nav_item"><a href="#team">Echipa</a></li>
+                        <li class="menu_nav_item"><a href="#calendar">Calendar</a></li>
+                        <li class="menu_nav_item has-dropdown">
+                            <span>
+                                Editii
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E" alt="">
+                            </span>
+                            <div class="mobile-dropdown">
+                                <a href="winners.html?year=2025">Editia 2025</a>
+                                <a href="winners.html?year=2024">Editia 2024</a>
+                            </div>
+                        </li>
+                        <li class="menu_nav_item has-dropdown">
+                            <span>
+                                Poze
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E" alt="">
+                            </span>
+                            <div class="mobile-dropdown">
+                                <a href="https://drive.google.com/drive/folders/1JO_G8nb_bZeC0XEUvOP70r9-gAH0TnU1?usp=drive_link" target="_blank" noreferrer noopener>
+                                    Arhiva Foto 2025
+                                </a>
+                            </div>
+                        </li>
+                        <li class="menu_nav_item"><a href="regulament_CommunITy.pdf">Regulament</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -258,17 +308,77 @@
     </footer>
 
     <script>
+        // Initialize AOS Library
         AOS.init();
+
+        // Header arrow scroll effect
         window.addEventListener("scroll", () => {
             const arrow = document.querySelector(".header-arrow");
-
             if (window.scrollY > 100) {
                 arrow.classList.add("hide");
             } else {
                 arrow.classList.remove("hide");
             }
         });
+
+        // Mobile menu functionality
+        const mobilenav = document.getElementById('mobilenav');
+        const mobilemenu = document.getElementById('mobilemenu');
+        const mobilenavBtn = document.querySelector(".mobilenav_btn");
+        const menuNavItems = document.querySelectorAll(".menu_nav_item");
+        const closeBtn = document.querySelector(".closebtn");
+        const hasDropdownItems = document.querySelectorAll(".has-dropdown");
+
+        function mobilenav_click() {
+            if(mobilenav.classList.contains('viz')) {
+                mobilenav_close();
+            } else {
+                mobilenav.classList.add('viz');
+                mobilemenu.classList.add('viz');
+            }
+        }
+
+        function mobilenav_close() {
+            mobilenav.classList.remove('viz');
+            mobilemenu.classList.remove('viz');
+            // Close all dropdowns when menu closes
+            hasDropdownItems.forEach(item => {
+                item.classList.remove('open');
+            });
+        }
+
+        mobilenavBtn.addEventListener("click", mobilenav_click);
+        closeBtn.addEventListener("click", mobilenav_close);
+
+        // Handle dropdown toggles
+        hasDropdownItems.forEach(item => {
+            const span = item.querySelector('span');
+            if (span) {
+                span.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    item.classList.toggle('open');
+                });
+            }
+        });
+
+        // Close menu when clicking regular nav items (not dropdowns)
+        menuNavItems.forEach(item => {
+            if (!item.classList.contains('has-dropdown')) {
+                item.addEventListener("click", mobilenav_close);
+            }
+        });
+
+        // Close dropdown links also close the menu
+        document.querySelectorAll('.mobile-dropdown a').forEach(link => {
+            link.addEventListener('click', mobilenav_close);
+        });
+
+        // Close menu when clicking outside
+        mobilemenu.addEventListener("click", (e) => {
+            if(e.target === mobilemenu) {
+                mobilenav_close();
+            }
+        });
     </script>
 </body>
 </html>
-

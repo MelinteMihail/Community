@@ -197,35 +197,3 @@ function resetTabPositions() {
 function parsePositionNumberToString(num) {
     return ['none', 'first', 'second', 'third'][num] || 'none';
 }
-
-/* ===========================
-   ✅ MOBILE SWIPE SUPPORT
-   =========================== */
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-function handleSwipe() {
-    const swipeDistance = touchEndX - touchStartX;
-
-    // Minimum distance for swipe detection
-    if (Math.abs(swipeDistance) < 50) return;
-
-    if (swipeDistance < 0) {
-        // Swipe LEFT → next year
-        changeYear(1);
-    } else {
-        // Swipe RIGHT → previous year
-        changeYear(-1);
-    }
-}
-
-// Add swipe listeners on the ENTIRE TAB AREA
-tabWrapper.addEventListener("touchstart", e => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-tabWrapper.addEventListener("touchend", e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
