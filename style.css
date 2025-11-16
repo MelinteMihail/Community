@@ -74,7 +74,7 @@ li {
   margin-left: var(--space-xl);
   list-style-type: none;
   padding: var(--space-sm);
-  border: var(--border-width) solid #239d56;
+  border: var(--border-width) solid var(--color-accent);
   border-top-color: transparent;
   border-right-color: transparent;
 }
@@ -532,9 +532,16 @@ header .header-arrow.hide::after {
   transition: color var(--transition-fast);
 }
 
-.links > div:hover,
-.regulament:hover {
+.links > div:hover {
   color: #c0c0c0;
+}
+
+.regulament a {
+  transition: color var(--transition-fast);
+}
+
+.regulament a:hover {
+  color: #29b764;
 }
 
 /* ---------- DROPDOWN ---------- */
