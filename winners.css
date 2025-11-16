@@ -716,13 +716,13 @@ main {
 
 
 .link {
-  color: #29b764;
+  color: #830009;
 
   transition: color var(--transition-normal);
 }
 
 .link:hover {
-  color: #239d56;
+  color: #550005;
 }
 
 footer {
