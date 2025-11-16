@@ -33,7 +33,7 @@
         "second": {
             "name": "Ceasul Social",
             "elevi": ["Ciupitu Ruxandra", "Dumitrescu Radu", "Hoang Hai-Yen", "Țiclete Sorin"],
-            "profesori": ["Iuliana Serban"],
+            "profesori": ["Iuliana Serban", "Splais Carmen Florentina"],
             "scoala": "Colegiul Național \"Cantemir-Vodă\"",
             "link": "https://docs.google.com/presentation/d/1dM66FQlgxpELpubF3Al3xUOw60i6351-/edit?usp=drive_link&ouid=113870813434152845258&rtpof=true&sd=true"
         },
@@ -42,6 +42,13 @@
             "elevi": ["Ene Mihai Lazăr", "Mușățoiu Matei", "Pascu Mircea Constantin"],
             "profesori": ["Anca Mihaela", "Văceanu Cornelia"],
             "scoala": "Colegiul Național I. L. Caragiale",
+            "link": ""
+        },
+        "fourth": {
+            "name": "EcoTrack",
+            "elevi": ["Andrei Ruxandra Maria", "Niță Sara Maria", "Pîrvu Cristiana Larisa"],
+            "profesori": ["Popa Simona Mihaela"],
+            "scoala": "Colegiul Național \"Gheorghe Lazăr\"",
             "link": ""
         }
     }

@@ -25,10 +25,14 @@ window.addEventListener("load", readDataFile);
 secondTab.addEventListener('transitionend', updateYear);
 buttonRight.addEventListener("click", () => changeYear(1));
 buttonLeft.addEventListener("click", () => changeYear(-1));
-    
-podiumParent.querySelectorAll('.podium').forEach(podium => {
+
+podiumParent.querySelectorAll('.podium').forEach((podium, index) => {
     const name = podium.querySelector('.name');
+
     podium.addEventListener('transitionend', () => {
+        if (index === 3 && event.propertyName !== 'height')
+            return;
+
         name.classList.add('active');
         name.style.transition = "opacity 0.25s ease-in-out";
 
@@ -36,6 +40,7 @@ podiumParent.querySelectorAll('.podium').forEach(podium => {
             handlePodiumClick(podiumParent.querySelector('.first'));
         }
     });
+
     podium.addEventListener('click', () => handlePodiumClick(podium));
 });
 
@@ -93,10 +98,10 @@ function changeTab(direction) {
     secondTab.style.transform = "translateX(0)";
     tab.style.transition = "transform 0.6s ease";
     tab.style.transform = `translateX(${-xTranslate}%)`;
-    
+
     tab.querySelectorAll('.info > *').forEach(el => {
 
-        if(el == ".link-wrapper")
+        if (el == ".link-wrapper")
             el.querySelector(".link").classList.remove("visible");
         else
             el.classList.remove('visible');
@@ -131,11 +136,17 @@ function updateYear() {
         name?.classList.remove('active');
         name.style.transition = "none";
 
-        const delay = (i + 1) * 0.1 * ((i + 1) % 2);
-        podium.style.transition = `height 0.6s ${delay}s cubic-bezier(0, 0.55, 0.45, 1), opacity 0.5s ease`;
-        podium.classList.add('active');
-    });
+        let delay = (i + 1) * 0.1 * ((i + 1) % 2);
+        if (i === 3) delay = 0.3;
+        const data = savedData[yearKey];
 
+        podium.style.transition = `height 0.6s ${delay}s cubic-bezier(0, 0.55, 0.45, 1), opacity 0.5s ease`;
+
+        void podium.offsetWidth;
+
+        if (i !== 3 || data.fourth)
+            podium.classList.add('active');
+    });
 
     updateTab(tab);
 }
@@ -148,6 +159,7 @@ function updateTab(selectedTab) {
     selectedTab.querySelector('.first .name').textContent = data.first.name;
     selectedTab.querySelector('.second .name').textContent = data.second.name;
     selectedTab.querySelector('.third .name').textContent = data.third.name;
+    selectedTab.querySelector('.fourth .name').textContent = data.fourth ? data.fourth.name : '';
 }
 
 let podiumTransitionInProgress = false;
@@ -161,8 +173,9 @@ function handlePodiumClick(clickedPodium) {
     });
 
     selectedTeam = clickedPodium.classList.contains('first') ? 1
-                 : clickedPodium.classList.contains('second') ? 2
-                 : 3;
+        : clickedPodium.classList.contains('second') ? 2
+            : clickedPodium.classList.contains('third') ? 3
+                : 4;
 
     const infoElements = tab.querySelectorAll('.info-card');
     const fadeDuration = 300;
@@ -179,7 +192,7 @@ function handlePodiumClick(clickedPodium) {
 function updateSelectedTeamContent() {
     const posStr = parsePositionNumberToString(selectedTeam);
     const obj = savedData[yearArray[currentYear]][posStr];
-    
+
     tab.querySelector('.text').textContent = obj.name;
     tab.querySelector('.elevi').textContent = obj.elevi.join(", ");
     tab.querySelector('.profesori').textContent = obj.profesori.join(", ");
@@ -202,11 +215,11 @@ function resetTabPositions() {
 }
 
 function parsePositionNumberToString(num) {
-    return ['none', 'first', 'second', 'third'][num] || 'none';
+    return ['none', 'first', 'second', 'third', 'fourth'][num] || 'none';
 }
 
 function mobilenav_click() {
-    if(mobilenav.classList.contains('viz')) {
+    if (mobilenav.classList.contains('viz')) {
         mobilenav_close();
     } else {
         mobilenav.classList.add('viz');
@@ -251,7 +264,7 @@ document.querySelectorAll('.mobile-dropdown a').forEach(link => {
 
 // Close menu when clicking outside
 mobilemenu.addEventListener("click", (e) => {
-    if(e.target === mobilemenu) {
+    if (e.target === mobilemenu) {
         mobilenav_close();
     }
 });

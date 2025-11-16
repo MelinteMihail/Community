@@ -1,4 +1,5 @@
 @import url(https://fonts.bunny.net/css?family=poppins:100,200,300,400,500,600,700,800,900);
+
 /* ---------- DESIGN TOKENS ---------- */
 :root {
   /* 🎨 Colors */
@@ -13,28 +14,40 @@
   --color-warning: brown;
   --color-disabled-bg: goldenrod;
   --color-disabled-text: gray;
-  --color-first: gold;
-  --color-second: silver;
-  --color-third: burlywood;
+  --color-first: #E6B800;
+  --color-second: #8E939E;
+  --color-third: #B87436;
   --color-footer-bg: #111111;
   --color-footer-text: #ffffff;
 
   /* ✍️ Typography */
   --font-family-base: "Poppins", sans-serif;
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-md: 1.25rem;    /* 20px */
-  --font-size-lg: 1.5rem;     /* 24px */
-  --font-size-xl: 1.75rem;    /* 28px */
-  --font-size-xxl: 2rem;      /* 32px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-md: 1.25rem;
+  /* 20px */
+  --font-size-lg: 1.5rem;
+  /* 24px */
+  --font-size-xl: 1.75rem;
+  /* 28px */
+  --font-size-xxl: 2rem;
+  /* 32px */
 
   /* 🧱 Spacing */
-  --space-xs: 0.25rem; /* 4px */
-  --space-sm: 0.5rem;  /* 8px */
-  --space-md: 1rem;    /* 16px */
-  --space-lg: 1.5rem;  /* 24px */
-  --space-xl: 2rem;    /* 32px */
-  --space-xxl: 5rem;   /* 80px */
+  --space-xs: 0.25rem;
+  /* 4px */
+  --space-sm: 0.5rem;
+  /* 8px */
+  --space-md: 1rem;
+  /* 16px */
+  --space-lg: 1.5rem;
+  /* 24px */
+  --space-xl: 2rem;
+  /* 32px */
+  --space-xxl: 5rem;
+  /* 80px */
 
   /* 🧩 Borders & Radius */
   --radius-sm: 4px;
@@ -65,14 +78,16 @@ a {
   color: inherit;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
+  /* full viewport height */
 }
 
 header {
@@ -91,7 +106,7 @@ header {
   height: 72px;
   right: 20px;
   top: 20px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: background-color 0.2s ease-in-out;
   width: 64px;
   border-radius: 8px;
@@ -99,7 +114,7 @@ header {
 }
 
 #mobilenav.viz {
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 #mobilenav .btn {
@@ -113,7 +128,7 @@ header {
 #mobilenav .btn i {
   display: block;
   height: 2px;
-  background-color: #00B300;
+  background-color: var(--color-background);
   margin-bottom: 6px;
   position: relative;
 }
@@ -155,7 +170,7 @@ header {
 }
 
 #mobilenav .btn:hover span {
-  color: #00B300;
+  color: var(--color-background);
 }
 
 #mobilemenu {
@@ -214,7 +229,7 @@ header {
   visibility: visible;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   z-index: 10;
 }
@@ -332,7 +347,7 @@ header {
   cursor: pointer;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown > span {
+#mobilemenu .menu .content .front ul li.has-dropdown>span {
   color: #fff;
   text-decoration: none;
   line-height: 1;
@@ -346,14 +361,14 @@ header {
   gap: 8px;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown > span img {
+#mobilemenu .menu .content .front ul li.has-dropdown>span img {
   width: 10px;
   height: 10px;
   filter: invert(1);
   transition: transform 0.3s ease;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown.open > span img {
+#mobilemenu .menu .content .front ul li.has-dropdown.open>span img {
   transform: rotate(90deg);
 }
 
@@ -373,7 +388,7 @@ header {
   display: block;
   padding: 10px 0;
   font-size: 16px;
-  color: #00B300;
+  color: var(--color-background);
   border: none;
 }
 
@@ -400,7 +415,7 @@ header {
   justify-content: center;
   flex: 1;
   align-items: center;
-  
+
   gap: var(--space-md);
   font-size: var(--font-size-md);
 }
@@ -419,14 +434,14 @@ header {
   flex: 1;
 }
 
-.links > div {
+.links>div {
   cursor: pointer;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast);
 }
 
-.links > div:hover {
+.links>div:hover {
   background-color: var(--color-surface);
 }
 
@@ -517,21 +532,22 @@ main {
   width: 80vw;
   height: auto;
   margin: 0 auto;
-  border: 1px solid #26aa5d;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.2);
 }
 
 .tab-parent .top-bar {
   display: flex;
   justify-content: space-between;
   padding: var(--space-md);
-  background-color: aliceblue;
+  background-color: #e8e8e8;
 }
 
 .tab-parent .top-bar button {
   border: none;
-  background-color: var(--color-highlight);
+  background-color: #830009;
+  color: #fff;  
   width: 2em;
   height: 2em;
   font-size: x-large;
@@ -541,19 +557,19 @@ main {
 }
 
 .tab-parent .top-bar button:hover {
-  background-color: var(--color-warning);
+  background-color: #550005;
   color: var(--color-background);
 }
 
 .tab-parent .top-bar button:disabled {
-  background-color: var(--color-disabled-bg);
-  color: var(--color-disabled-text);
+  background-color: #a80009;
+  color: #D9D9D9;
   cursor: no-drop;
 }
 
 .tab-wrapper {
   position: relative;
-  min-height: 30rem;  
+  min-height: 30rem;
   overflow: visible;
 }
 
@@ -577,6 +593,7 @@ main {
   display: flex;
   align-items: end;
   height: 17.5rem;
+  position: relative;
 }
 
 .podium {
@@ -601,6 +618,26 @@ main {
 
 .third.active {
   height: 7.5rem;
+  background-color: var(--color-third);
+}
+
+.fourth {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fourth.active {
+  position: inherit;
+  transform: translateX(0);
+  height: 7.5rem;
+  width: 7.5rem;
+  opacity: 1;
+  pointer-events: auto;
   background-color: var(--color-third);
 }
 
@@ -649,8 +686,8 @@ main {
   justify-content: center;
   padding: var(--space-sm);
 
-  width: 100%;            
-  max-width: 500px;        
+  width: 100%;
+  max-width: 500px;
   min-width: 300px;
 }
 
@@ -741,6 +778,10 @@ footer .right .img-container {
     padding-inline: var(--space-md);
   }
 
+  .tab-parent {
+    width: 95vw;
+  }
+
   .tab-wrapper {
     min-height: 50rem;
     height: auto;
@@ -773,7 +814,9 @@ footer .right .img-container {
     height: 9rem;
   }
 
+  .fourth.active,
   .third.active {
+    width: 5rem;
     height: 6rem;
   }
 
@@ -798,4 +841,12 @@ footer .right .img-container {
   footer .right .img-container {
     align-items: center;
   }
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+.tab-parent {
+  background-color: var(--color-background)
 }
