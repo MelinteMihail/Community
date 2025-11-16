@@ -288,7 +288,7 @@ header {
 #mobilemenu .menu .content .back {
   position: absolute;
   width: 80px;
-  border-right: solid 1px rgba(0, 179, 0, 0.5);
+  border-right: solid 2px #550005;
   height: 100%;
   left: 0;
   opacity: 0;
