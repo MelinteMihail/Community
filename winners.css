@@ -394,6 +394,7 @@ header {
   flex: 1;
   align-items: center;
 
+  font-weight: 600;
   gap: var(--space-md);
   font-size: var(--font-size-md);
 }
@@ -410,6 +411,7 @@ header {
   align-items: center;
   justify-content: flex-end;
   flex: 1;
+  font-weight: 600;
 }
 
 .links>div {
@@ -458,6 +460,8 @@ header {
   transform: translateY(-10px);
   transition: all var(--transition-normal);
   border: var(--border-width) solid var(--color-border);
+
+  font-weight: initial;
 }
 
 .dropdown a {
@@ -710,6 +714,7 @@ footer {
   color: var(--color-footer-text);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--space-xl);
   margin-top: var(--space-xl);
   text-align: center;
@@ -717,7 +722,7 @@ footer {
 
 footer .left,
 footer .middle,
-footer .right .img-container {
+footer .right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -733,8 +738,15 @@ footer .left {
   align-items: flex-start;
 }
 
-footer .right .img-container {
+footer .right {
   align-items: flex-end;
+}
+
+footer .left img,
+footer .right img {
+  max-width: 250px;
+  height: auto; 
+  object-fit: contain; 
 }
 
 .cncv-logo {

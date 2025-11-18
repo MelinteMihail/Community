@@ -878,7 +878,7 @@ footer .right {
 
 footer .left img,
 footer .right img {
-  max-width: 350px;
+  max-width: 250px;
   height: auto; 
   object-fit: contain; 
 }
