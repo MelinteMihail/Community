@@ -5,8 +5,8 @@ const tab = document.querySelector('.tab');
 const tabWrapper = document.querySelector('.tab-wrapper');
 const podiumParent = tab.querySelector('.podium-parent');
 
-const mobilenav = document.getElementById('mobilenav');
-const mobilemenu = document.getElementById('mobilemenu');
+const mobilenav = document.querySelector('.mobilenav');
+const mobilemenu = document.querySelector('.mobilemenu');
 const mobilenavBtn = document.querySelector(".mobilenav_btn");
 const menuNavItems = document.querySelectorAll(".menu_nav_item");
 const closeBtn = document.querySelector(".closebtn");
@@ -230,7 +230,7 @@ function mobilenav_click() {
 function mobilenav_close() {
     mobilenav.classList.remove('viz');
     mobilemenu.classList.remove('viz');
-    // Close all dropdowns when menu closes
+
     hasDropdownItems.forEach(item => {
         item.classList.remove('open');
     });
@@ -239,7 +239,6 @@ function mobilenav_close() {
 mobilenavBtn.addEventListener("click", mobilenav_click);
 closeBtn.addEventListener("click", mobilenav_close);
 
-// Handle dropdown toggles
 hasDropdownItems.forEach(item => {
     const span = item.querySelector('span');
     if (span) {
@@ -250,19 +249,16 @@ hasDropdownItems.forEach(item => {
     }
 });
 
-// Close menu when clicking regular nav items (not dropdowns)
 menuNavItems.forEach(item => {
     if (!item.classList.contains('has-dropdown')) {
         item.addEventListener("click", mobilenav_close);
     }
 });
 
-// Close dropdown links also close the menu
 document.querySelectorAll('.mobile-dropdown a').forEach(link => {
     link.addEventListener('click', mobilenav_close);
 });
 
-// Close menu when clicking outside
 mobilemenu.addEventListener("click", (e) => {
     if (e.target === mobilemenu) {
         mobilenav_close();

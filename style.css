@@ -1,6 +1,5 @@
 @import url(https://fonts.bunny.net/css?family=poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 :root {
-  /* 🎨 Colors */
   --color-primary: rebeccapurple;
   --color-accent: #610006;
   --color-background: #ffffff;
@@ -10,40 +9,34 @@
   --color-border: #e0e0e0;
   --color-footer-bg: #111111;
   --color-footer-text: #ffffff;
+  --color-link-hover: #c0c0c0;
 
-  /* ✍️ Typography */
   --font-family-base: "Poppins", sans-serif;
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-md: 1.25rem;    /* 20px */
-  --font-size-lg: 1.5rem;     /* 24px */
-  --font-size-xl: 1.75rem;    /* 28px */
-  --font-size-xxl: 2rem;      /* 32px */
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 1.75rem;
+  --font-size-xxl: 2rem;
 
-  /* 🧱 Spacing */
-  --space-xs: 0.25rem; /* 4px */
-  --space-sm: 0.5rem;  /* 8px */
-  --space-md: 1rem;    /* 16px */
-  --space-lg: 1.5rem;  /* 24px */
-  --space-xl: 2rem;    /* 32px */
-  --space-xxl: 5rem;   /* 80px */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 5rem;
 
-  /* 🧩 Borders & Radius */
   --radius-sm: 4px;
   --radius-md: 5px;
   --radius-lg: 10px;
   --border-width: 1px;
 
-  /* 🌫️ Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  /* ⚙️ Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
 }
-
-/* ---------- GLOBAL RESET ---------- */
 
 * {
   margin: 0;
@@ -83,7 +76,7 @@ li:last-child {
   border-bottom-left-radius: var(--radius-lg);
 }
 
-#mobilenav {
+.mobilenav {
   position: fixed;
   z-index: 200;
   height: 72px;
@@ -96,11 +89,11 @@ li:last-child {
   display: none;
 }
 
-#mobilenav.viz {
+.mobilenav.viz {
   background-color: rgba(0,0,0,0.75);
 }
 
-#mobilenav .btn {
+.mobilenav .btn {
   width: 100%;
   height: 100%;
   padding: 16px 0 0 18px;
@@ -108,7 +101,7 @@ li:last-child {
   cursor: pointer;
 }
 
-#mobilenav .btn i {
+.mobilenav .btn i {
   display: block;
   height: 2px;
   background-color: var(--color-background);
@@ -116,7 +109,7 @@ li:last-child {
   position: relative;
 }
 
-#mobilenav .btn i:before {
+.mobilenav .btn i:before {
   position: absolute;
   content: '';
   width: 0px;
@@ -125,24 +118,24 @@ li:last-child {
   transition: all 0.2s ease-in-out;
 }
 
-#mobilenav .btn:hover i:before {
+.mobilenav .btn:hover i:before {
   width: 100%;
 }
 
-#mobilenav .btn .l1 {
+.mobilenav .btn .l1 {
   width: 28px;
 }
 
-#mobilenav .btn .l2 {
+.mobilenav .btn .l2 {
   width: 19.6px;
   transition: all 0.2s ease-in-out;
 }
 
-#mobilenav .btn:hover .l2 {
+.mobilenav .btn:hover .l2 {
   width: 28px;
 }
 
-#mobilenav .btn span {
+.mobilenav .btn span {
   color: #fff;
   font-size: 11px;
   font-family: 'Poppins', sans-serif;
@@ -152,11 +145,11 @@ li:last-child {
   text-align: center;
 }
 
-#mobilenav .btn:hover span {
+.mobilenav .btn:hover span {
   color: var(--color-background);
 }
 
-#mobilemenu {
+.mobilemenu {
   position: fixed;
   top: 0;
   left: 0;
@@ -170,14 +163,14 @@ li:last-child {
   overflow: hidden;
 }
 
-#mobilemenu.viz {
+.mobilemenu.viz {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
   overflow: hidden;
 }
 
-#mobilemenu .menu {
+.mobilemenu .menu {
   position: absolute;
   height: 100%;
   top: 0;
@@ -187,21 +180,15 @@ li:last-child {
   overflow: hidden;
 }
 
-#mobilemenu.viz .menu {
+.mobilemenu.viz .menu {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 480px) {
-  #mobilemenu .menu {
-    max-width: 100%;
-  }
-}
-
-#mobilemenu .menu .shadow {
+.mobilemenu .menu .shadow {
   display: none;
 }
 
-#mobilemenu .menu .shadow .closebtn {
+.mobilemenu .menu .shadow .closebtn {
   display: block;
   position: absolute;
   width: 64px;
@@ -217,8 +204,8 @@ li:last-child {
   z-index: 10;
 }
 
-#mobilemenu .menu .shadow .closebtn::before,
-#mobilemenu .menu .shadow .closebtn::after {
+.mobilemenu .menu .shadow .closebtn::before,
+.mobilemenu .menu .shadow .closebtn::after {
   content: '';
   position: absolute;
   width: 30px;
@@ -228,15 +215,15 @@ li:last-child {
   left: 50%;
 }
 
-#mobilemenu .menu .shadow .closebtn::before {
+.mobilemenu .menu .shadow .closebtn::before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-#mobilemenu .menu .shadow .closebtn::after {
+.mobilemenu .menu .shadow .closebtn::after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-#mobilemenu .menu .content {
+.mobilemenu .menu .content {
   position: absolute;
   height: 100%;
   top: 0;
@@ -248,12 +235,12 @@ li:last-child {
   transform-origin: right center;
 }
 
-#mobilemenu.viz .menu .content {
+.mobilemenu.viz .menu .content {
   width: 100%;
   transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-#mobilemenu .menu .content .front {
+.mobilemenu .menu .content .front {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -263,12 +250,12 @@ li:last-child {
   transition: opacity 0.3s ease 0.5s;
 }
 
-#mobilemenu.viz .menu .content .front {
+.mobilemenu.viz .menu .content .front {
   opacity: 1;
   transition: opacity 0.3s ease 0.5s;
 }
 
-#mobilemenu .menu .content .back {
+.mobilemenu .menu .content .back {
   position: absolute;
   width: 80px;
   border-right: solid 2px #550005;
@@ -278,12 +265,12 @@ li:last-child {
   transition: opacity 0.3s ease 0.5s;
 }
 
-#mobilemenu.viz .menu .content .back {
+.mobilemenu.viz .menu .content .back {
   opacity: 1;
   transition: opacity 0.3s ease 0.5s;
 }
 
-#mobilemenu .menu .content .front h1 {
+.mobilemenu .menu .content .front h1 {
   color: #fff;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
@@ -294,25 +281,25 @@ li:last-child {
   line-height: 1;
 }
 
-#mobilemenu .menu .content .front ul {
+.mobilemenu .menu .content .front ul {
   margin: 20px 0 0 70px;
   padding: 24px 0;
   list-style: none;
   background-color: #101010;
 }
 
-#mobilemenu .menu .content .front ul li {
+.mobilemenu .menu .content .front ul li {
   margin-top: 20px;
   margin-left: 0;
   border: none;
   padding: 0;
 }
 
-#mobilemenu .menu .content .front ul li:nth-child(1) {
+.mobilemenu .menu .content .front ul li:nth-child(1) {
   margin-top: 0;
 }
 
-#mobilemenu .menu .content .front ul li a {
+.mobilemenu .menu .content .front ul li a {
   color: #fff;
   text-decoration: none;
   line-height: 1;
@@ -324,13 +311,12 @@ li:last-child {
   display: block;
 }
 
-/* Mobile menu dropdown styles */
-#mobilemenu .menu .content .front ul li.has-dropdown {
+.mobilemenu .menu .content .front ul li.has-dropdown {
   position: relative;
   cursor: pointer;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown > span {
+.mobilemenu .menu .content .front ul li.has-dropdown > span {
   color: #fff;
   text-decoration: none;
   line-height: 1;
@@ -344,18 +330,18 @@ li:last-child {
   gap: 8px;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown > span img {
+.mobilemenu .menu .content .front ul li.has-dropdown > span img {
   width: 10px;
   height: 10px;
   filter: invert(1);
   transition: transform 0.3s ease;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown.open > span img {
+.mobilemenu .menu .content .front ul li.has-dropdown.open > span img {
   transform: rotate(90deg);
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown .mobile-dropdown {
+.mobilemenu .menu .content .front ul li.has-dropdown .mobile-dropdown {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
@@ -363,11 +349,11 @@ li:last-child {
   padding-left: 20px;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown.open .mobile-dropdown {
+.mobilemenu .menu .content .front ul li.has-dropdown.open .mobile-dropdown {
   max-height: 300px;
 }
 
-#mobilemenu .menu .content .front ul li.has-dropdown .mobile-dropdown a {
+.mobilemenu .menu .content .front ul li.has-dropdown .mobile-dropdown a {
   display: block;
   padding: 10px 0;
   font-size: 16px;
@@ -504,6 +490,7 @@ header .header-arrow.hide::after {
   
   gap: var(--space-md);
   font-size: var(--font-size-md);
+  font-weight: 600;
 }
 
 .links .editii img,
@@ -519,6 +506,7 @@ header .header-arrow.hide::after {
 
 .regulament {
   font-size: var(--font-size-md);
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -533,7 +521,7 @@ header .header-arrow.hide::after {
 }
 
 .links > div:hover {
-  color: #c0c0c0;
+  color: var(--color-link-hover);
 }
 
 .regulament a {
@@ -541,10 +529,9 @@ header .header-arrow.hide::after {
 }
 
 .regulament a:hover {
-  color: #29b764;
+  color: var(--color-link-hover);
 }
 
-/* ---------- DROPDOWN ---------- */
 .editii,
 .poze {
   position: relative;
@@ -572,6 +559,7 @@ header .header-arrow.hide::after {
   transform: translateY(-10px);
   transition: all var(--transition-normal);
   border: var(--border-width) solid var(--color-border);
+  font-weight: initial;
 }
 
 .dropdown a {
@@ -897,6 +885,7 @@ footer .right img {
 
 .cncv-logo {
   border-radius: 10px;
+  max-width: 250px;
 }
 
 
@@ -939,121 +928,19 @@ footer .right img {
 
 }
 
-/* @media only screen and (max-width: 600px) {
-
-  main .about .about-text {
-    font-size: var(--font-size-sm);
-    width: 40ch;
+@media only screen and (max-width: 480px) {
+  .mobilemenu .menu {
+    max-width: 100%;
   }
-
-  main .values {
-    flex-direction: column;
-  }
-
-  main .team {
-    padding-inline: var(--space-sm)
-  }
-
-  footer {
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  footer .left,
-  footer .right  {
-    align-items: center;
-    justify-content: center;
-  }
-
-  footer .left img,
-  footer .right img {
-    max-width: 250px;
-  }
-} */
-
-/* Small devices (portrait tablets and large phones, 601px - 768px) */
-/* @media only screen and (min-width: 601px) and (max-width: 768px) { */
-  /* your styles */
-/* 
-  main .about .about-text {
-    font-size: var(--font-size-base);
-    width: 60ch;
-  }
-
-  main .values {
-    flex-direction: column;
-  }
-
-  main .values .value-card {
-    max-width: 600px;
-  }
-
-  main .team {
-    padding-inline: var(--space-sm)
-  }
-
-  footer {
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  footer .left,
-  footer .right .img-container {
-    align-items: center;
-    justify-content: center;
-  }
-} */
-
-  /* Medium devices (landscape tablets, 769px - 1024px) */
-/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .navbar .logo img {
-    max-width: 250px;
-  }
-  main .about .about-text {
-    width: 60ch;
-  }
-
-  footer {
-    padding: var(--space-md) var(--space-lg);
-  }
-
-  footer .left,
-  footer .middle,
-  footer .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  footer .right {
-    align-items: center;
-    justify-content: center;
-  }
-  
-  footer .left img,
-  footer .right img {
-    max-width: 250px;
-  }
-
-  footer .middle {
-    flex: 2
-  }
-} */
-
-/* Large devices (desktops, 1025px - 1200px) */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  /* your styles */
-}
-
-/* Extra large devices (large desktops, 1201px - 1399px) */
-@media only screen and (min-width: 1201px) and (max-width: 1399px) {
-  /* your styles */
 }
 
 @media only screen and (max-width: 600px) {
-  #mobilenav {
+  .mobilenav {
     display: block;
+  }
+
+  .navbar .logo img {
+    max-width: 250px;
   }
 
   .navbar .links,
@@ -1095,10 +982,13 @@ footer .right img {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 601px - 768px) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
-  #mobilenav {
+  .mobilenav {
     display: block;
+  }
+
+  .navbar .logo img {
+    max-width: 250px;
   }
 
   .navbar .links,
@@ -1139,8 +1029,16 @@ footer .right img {
   }
 }
 
-/* Medium devices (landscape tablets, 769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .mobilenav {
+    display: block;
+  }
+
+  .navbar .links,
+  .navbar .regulament {
+    display: none;
+  }
+
   .navbar .logo img {
     max-width: 250px;
   }
