@@ -289,7 +289,7 @@
 
         <div class="middle">
             <div class="top">
-                Copyright CommunITy 2025
+
             </div>
 
             <div class="bottom">
@@ -325,6 +325,15 @@
         const closeBtn = document.querySelector(".closebtn");
         const hasDropdownItems = document.querySelectorAll(".has-dropdown");
 
+        function updateFooterYear() {
+            const currentYear = new Date().getFullYear();
+            const text = document.querySelector("footer .middle .top");
+
+            if(text) {
+                text.textContent = `© CommunITy ${currentYear}`;
+            }
+        }
+
         function mobilenav_click() {
             if(mobilenav.classList.contains('viz')) {
                 mobilenav_close();
@@ -342,6 +351,8 @@
                 item.classList.remove('open');
             });
         }
+
+        updateFooterYear();
 
         mobilenavBtn.addEventListener("click", mobilenav_click);
         closeBtn.addEventListener("click", mobilenav_close);

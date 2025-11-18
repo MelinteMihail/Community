@@ -44,6 +44,15 @@ podiumParent.querySelectorAll('.podium').forEach((podium, index) => {
     podium.addEventListener('click', () => handlePodiumClick(podium));
 });
 
+function updateFooterYear() {
+    const currentYear = new Date().getFullYear();
+    const text = document.querySelector("footer .middle .top");
+
+    if(text) {
+        text.textContent = `© CommunITy ${currentYear}`;
+    }
+}
+
 function readDataFile() {
     fetch("data/data.json")
         .then(res => res.ok ? res.json() : Promise.reject(`HTTP ${res.status}`))
@@ -235,6 +244,17 @@ function mobilenav_close() {
         item.classList.remove('open');
     });
 }
+
+function updateFooterYear() {
+    const currentYear = new Date().getFullYear();
+    const text = document.querySelector("footer .middle .top");
+
+    if(text) {
+        text.textContent = `© CommunITy ${currentYear}`;
+    }
+}
+
+updateFooterYear();
 
 mobilenavBtn.addEventListener("click", mobilenav_click);
 closeBtn.addEventListener("click", mobilenav_close);
