@@ -83,7 +83,6 @@ header {
   height: 10px;
 }
 
-/* Mobile Menu Styles */
 .mobilenav {
   position: fixed;
   z-index: 200;
@@ -319,7 +318,6 @@ header {
   display: block;
 }
 
-/* Mobile menu dropdown styles */
 .mobilemenu .menu .content .front ul li.has-dropdown {
   position: relative;
   cursor: pointer;
@@ -370,7 +368,6 @@ header {
   border: none;
 }
 
-/* ---------- HEADER & NAVBAR ---------- */
 .logo {
   display: flex;
   justify-content: flex-start;
@@ -500,8 +497,6 @@ header {
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
-/* ---------- MAIN ---------- */
-
 main {
   flex: 1;
 
@@ -571,7 +566,6 @@ main {
   place-items: center;
 }
 
-/* ---------- PODIUM ---------- */
 .podium-parent {
   margin-top: var(--space-xl);
   display: flex;
@@ -759,8 +753,6 @@ footer .right img {
     max-width: 100%;
   }
 }
-
-/* Mobile Responsive */
 
 @media only screen and (max-width: 600px) {
     .mobilenav {

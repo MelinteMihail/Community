@@ -361,8 +361,6 @@ li:last-child {
   border: none;
 }
 
-/* ---------- HEADER ---------- */
-
 header {
   color: #fff;
   display: flex;
@@ -598,7 +596,6 @@ header .header-arrow.hide::after {
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
-/* ---------- HERO CONTAINER ---------- */
 .container {
   display: flex;
   flex-direction: column;
@@ -609,7 +606,6 @@ header .header-arrow.hide::after {
   font-size: var(--font-size-xl);
 }
 
-/* ---------- MAIN ---------- */
 main {
   display: flex;
   justify-content: center;
@@ -619,7 +615,6 @@ main {
   gap: var(--space-xxl);
 }
 
-/* ABOUT SECTION */
 main .about {
   display: flex;
   flex-direction: column;
@@ -670,7 +665,6 @@ main .about-title h2::after {
   border-radius: 3px;
 }
 
-/* VALUES SECTION */
 main .values {
   display: flex;
   justify-content: center;
@@ -699,7 +693,6 @@ main .value-card img {
   margin-bottom: 1rem;
 }
 
-/* TEAM SECTION */
 main .team {
   display: flex;
   flex-direction: column;
@@ -756,7 +749,6 @@ main .team-list .team-wrapper h3 {
   color: var(--color-accent);
 }
 
-/* CALENDAR SECTION */
 main .calendar,
 main .calendar .event-cards {
   display: flex;
@@ -809,7 +801,6 @@ main .calendar .event-cards .card:hover {
   transform: translateY(-5px);
 }
 
-/* ARROW ELEMENT */
 .arrow {
   position: relative;
   display: flex;
@@ -842,7 +833,6 @@ main .calendar .event-cards .card:hover {
   transform: rotate(-45deg);
 }
 
-/* ---------- FOOTER ---------- */
 footer {
   background: var(--color-footer-bg);
   color: var(--color-footer-text);
