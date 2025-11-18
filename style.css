@@ -939,6 +939,10 @@ footer .right img {
     display: block;
   }
 
+  header .header-arrow {
+    display: none;
+  }
+
   .navbar .logo img {
     max-width: 250px;
   }
@@ -985,6 +989,10 @@ footer .right img {
 @media only screen and (min-width: 601px) and (max-width: 768px) {
   .mobilenav {
     display: block;
+  }
+
+  header .header-arrow {
+    display: none;
   }
 
   .navbar .logo img {
@@ -1072,14 +1080,4 @@ footer .right img {
   footer .middle {
     flex: 2
   }
-}
-
-/* Large devices (desktops, 1025px - 1200px) */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  /* your styles */
-}
-
-/* Extra large devices (large desktops, 1201px - 1399px) */
-@media only screen and (min-width: 1201px) and (max-width: 1399px) {
-  /* your styles */
 }
