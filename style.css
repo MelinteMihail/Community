@@ -612,7 +612,7 @@ main {
   align-items: center;
   flex-direction: column;
   margin-block: var(--space-xxl);
-  gap: var(--space-xxl);
+  gap: var(--space-xl);
 }
 
 main .about {
@@ -634,6 +634,8 @@ main .about .about-text {
   font-size: calc(var(--font-size-md) - 0.1rem);
   line-height: 1.8;
   text-align: justify;
+
+  margin-bottom: var(--space-xl);
 }
 
 main .about .about-text p {
@@ -642,7 +644,7 @@ main .about .about-text p {
 
 main .about-title {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-xl);
   position: relative;
 }
 
@@ -663,6 +665,23 @@ main .about-title h2::after {
   height: 3px;
   background: var(--color-accent);
   border-radius: 3px;
+}
+
+main .about-button {
+  color: var(--color-background);
+  background-color: #830009;
+
+  font-size: var(--font-size-md);
+  transition: background-color var(--transition-fast);
+
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+}
+
+main .about-button:hover {
+  background-color: #550005;
 }
 
 main .values {
@@ -874,7 +893,6 @@ footer .right img {
 }
 
 .cncv-logo {
-  border-radius: 10px;
   max-width: 250px;
 }
 
