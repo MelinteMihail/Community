@@ -13,8 +13,14 @@ const closeBtn = document.querySelector(".closebtn");
 const hasDropdownItems = document.querySelectorAll(".has-dropdown");
 
 const secondTab = tab.cloneNode(true);
+const secondTabLink = secondTab.querySelector('.link-wrapper .link');
 secondTab.className = 'second-tab';
 tabWrapper.appendChild(secondTab);
+
+if (secondTabLink) {
+    secondTabLink.setAttribute('aria-hidden', 'true');
+    secondTabLink.setAttribute('tabindex', '-1');
+}
 
 let yearArray = [];
 let currentYear = 0;
